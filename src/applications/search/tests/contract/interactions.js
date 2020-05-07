@@ -15,7 +15,7 @@ const expectedResponseBody = results => ({
     type: 'search_results_responses',
     attributes: {
       body: {
-        query: SEARCH_STRING,
+        query: 'benefits',
         web: { results },
       },
     },
@@ -31,51 +31,51 @@ const expectedResponseBody = results => ({
 });
 
 export default {
-  searchWithNoResults: {
-    state: 'no matching results exist',
-    uponReceiving: 'a search query',
-    withRequest: {
-      method: 'GET',
-      path: '/v0/search',
-      query: { query: SEARCH_STRING },
-      headers: {
-        'X-Key-Inflection': 'camel',
-      },
-    },
-    willRespondWith: {
-      status: 200,
-      headers: {
-        'Content-Type': Matchers.term({
-          matcher: '^application/json',
-          generate: 'application/json; charset=utf-8',
-        }),
-      },
-      body: expectedResponseBody([]),
-    },
-  },
-
-  searchWithSingleResult: {
-    state: 'a single matching result exists',
-    uponReceiving: 'a search query',
-    withRequest: {
-      method: 'GET',
-      path: '/v0/search',
-      query: { query: SEARCH_STRING },
-      headers: {
-        'X-Key-Inflection': 'camel',
-      },
-    },
-    willRespondWith: {
-      status: 200,
-      headers: {
-        'Content-Type': Matchers.term({
-          matcher: '^application/json',
-          generate: 'application/json; charset=utf-8',
-        }),
-      },
-      body: expectedResponseBody([searchResultExpectation]),
-    },
-  },
+  // searchWithNoResults: {
+  //   state: 'no matching results exist',
+  //   uponReceiving: 'a search query',
+  //   withRequest: {
+  //     method: 'GET',
+  //     path: '/v0/search',
+  //     query: { query: SEARCH_STRING },
+  //     headers: {
+  //       'X-Key-Inflection': 'camel',
+  //     },
+  //   },
+  //   willRespondWith: {
+  //     status: 200,
+  //     headers: {
+  //       'Content-Type': Matchers.term({
+  //         matcher: '^application/json',
+  //         generate: 'application/json; charset=utf-8',
+  //       }),
+  //     },
+  //     body: expectedResponseBody([]),
+  //   },
+  // },
+  //
+  // searchWithSingleResult: {
+  //   state: 'a single matching result exists',
+  //   uponReceiving: 'a search query',
+  //   withRequest: {
+  //     method: 'GET',
+  //     path: '/v0/search',
+  //     query: { query: SEARCH_STRING },
+  //     headers: {
+  //       'X-Key-Inflection': 'camel',
+  //     },
+  //   },
+  //   willRespondWith: {
+  //     status: 200,
+  //     headers: {
+  //       'Content-Type': Matchers.term({
+  //         matcher: '^application/json',
+  //         generate: 'application/json; charset=utf-8',
+  //       }),
+  //     },
+  //     body: expectedResponseBody([searchResultExpectation]),
+  //   },
+  // },
 
   searchWithMultipleResults: {
     state: 'multiple matching results exist',
@@ -83,7 +83,7 @@ export default {
     withRequest: {
       method: 'GET',
       path: '/v0/search',
-      query: { query: SEARCH_STRING },
+      query: { query: 'benefits' },
       headers: {
         'X-Key-Inflection': 'camel',
       },

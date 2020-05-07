@@ -22,7 +22,7 @@ describe('Search', () => {
 
     cy.route(
       'GET',
-      '/v0/search?query=test2',
+      '/v0/search?query=benefits',
       scenarios['multiple matching results exist'],
     ).as('searchWithMultipleResults');
   });
@@ -42,7 +42,7 @@ describe('Search', () => {
 
     cy.location().should(({ pathname, search }) => {
       expect(pathname).to.eq('/search/');
-      expect(new URLSearchParams(search).get('query')).to.eq('test1');
+      expect(new URLSearchParams(search).get('query')).to.eq('benefits');
     });
 
     cy.get('form.search-box input').should('have.value', 'test1');
@@ -54,7 +54,7 @@ describe('Search', () => {
     cy.contains('Search').click();
 
     cy.get('#query')
-      .type('test2')
+      .type('benefits')
       .type('{enter}');
 
     cy.wait('@searchWithMultipleResults')
