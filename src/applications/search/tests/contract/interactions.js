@@ -1,6 +1,6 @@
 import { Matchers } from '@pact-foundation/pact';
 
-export const SEARCH_STRING = 'test';
+export const SEARCH_STRING = 'benefits';
 const RESULTS_PER_PAGE = 10;
 
 const searchResultExpectation = {
@@ -15,7 +15,7 @@ const expectedResponseBody = results => ({
     type: 'search_results_responses',
     attributes: {
       body: {
-        query: 'benefits',
+        query: SEARCH_STRING,
         web: { results },
       },
     },
@@ -83,7 +83,7 @@ export default {
     withRequest: {
       method: 'GET',
       path: '/v0/search',
-      query: { query: 'benefits' },
+      query: { query: SEARCH_STRING },
       headers: {
         'X-Key-Inflection': 'camel',
       },
