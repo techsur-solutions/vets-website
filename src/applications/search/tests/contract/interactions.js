@@ -97,7 +97,7 @@ export default {
         }),
       },
       body: expectedResponseBody(
-        Matchers.eachLike(searchResultExpectation, { min: 2 }),
+        Matchers.eachLike(searchResultExpectation, { min: 3 }),
       ),
     },
   },
