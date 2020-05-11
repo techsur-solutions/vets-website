@@ -25,7 +25,7 @@ const expectedResponseBody = results => ({
       currentPage: 1,
       perPage: RESULTS_PER_PAGE,
       totalPages: Math.ceil((results.min || results.length) / RESULTS_PER_PAGE),
-      totalEntries: results.min || results.length,
+      // totalEntries: results.min || results.length,
     },
   },
 });
@@ -97,7 +97,7 @@ export default {
         }),
       },
       body: expectedResponseBody(
-        Matchers.eachLike(searchResultExpectation, { min: 3 }),
+        Matchers.eachLike(searchResultExpectation, { min: 2 }),
       ),
     },
   },
