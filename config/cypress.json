@@ -1,5 +1,6 @@
 {
   "baseUrl": "http://localhost:3001",
+  "firefoxGcInterval": null,
   "integrationFolder": "./src",
   "pluginsFile": "src/platform/testing/e2e/cypress/plugins/index.js",
   "supportFile": "src/platform/testing/e2e/cypress/support/index.js",
