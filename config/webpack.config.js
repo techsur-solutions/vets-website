@@ -338,6 +338,15 @@ module.exports = env => {
         title: template.title || appName ? `${appName} | VA.gov` : 'VA.gov',
       });
 
+    // Create a placeholder home page.
+    baseConfig.plugins.push(
+      new HtmlPlugin({
+        filename: path.join(outputPath, '..', 'index.html'),
+        inject: false,
+        title: 'VA.gov',
+      }),
+    );
+
     baseConfig.plugins = baseConfig.plugins.concat(
       // Fall back to using app manifests if app registry no longer exists.
       // The app registry is used primarily to get the template metadata
