@@ -169,7 +169,7 @@ jobs:
   build-e2e:
     working_directory: ~/vets-website
     docker:
-      - image: cypress/browsers:node10.16.3-chrome80-ff73
+      - image: cypress/base:10.15.3
     resource_class: xlarge
     steps:
       - checkout
@@ -195,7 +195,7 @@ jobs:
   e2e-test:
     working_directory: ~/vets-website
     docker:
-      - image: cypress/browsers:node10.16.3-chrome80-ff73
+      - image: cypress/base:10.15.3
     resource_class: xlarge
     steps:
       - checkout
