@@ -42,13 +42,6 @@ contractTest('User', 'VA.gov API', mockApi => {
                   is_veteran: true,
                   served_in_military: true,
                 },
-                in_progress_forms: [
-                  {
-                    form: VA_FORM_IDS.FORM_10_10EZ,
-                    metadata: {},
-                  },
-                ],
-                prefills_available: [VA_FORM_IDS.FORM_21_526EZ],
                 services: [
                   'facilities',
                   'hca',
@@ -65,18 +58,6 @@ contractTest('User', 'VA.gov API', mockApi => {
                   birth_date: '19511118',
                   family_name: 'Hunter',
                   gender: 'M',
-                  given_names: ['Julio', 'E'],
-                  active_status: 'active',
-                  facilities: [
-                    {
-                      facility_id: '983',
-                      isCerner: false,
-                    },
-                    {
-                      facility_id: '984',
-                      isCerner: false,
-                    },
-                  ],
                 },
               },
             },
