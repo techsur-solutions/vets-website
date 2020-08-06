@@ -2,7 +2,6 @@ import { Matchers } from '@pact-foundation/pact';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import { VA_FORM_IDS } from 'platform/forms/constants';
 import contractTest from 'platform/testing/contract';
 import { refreshProfile } from 'platform/user/profile/actions';
 
@@ -42,17 +41,6 @@ contractTest('User', 'VA.gov API', mockApi => {
                   is_veteran: true,
                   served_in_military: true,
                 },
-                services: [
-                  'facilities',
-                  'hca',
-                  'edu-benefits',
-                  'evss-claims',
-                  'form526',
-                  'user-profile',
-                  'health-records',
-                  'rx',
-                  'messaging',
-                ],
                 va_profile: {
                   status: 'OK',
                   birth_date: '19511118',
