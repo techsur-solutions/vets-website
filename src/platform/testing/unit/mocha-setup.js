@@ -30,7 +30,7 @@ function filterStackTrace(trace) {
 /**
  * Sets up JSDom in the testing environment. Allows testing of DOM functions without a browser.
  */
-export default function setupJSDom() {
+function setupJSDom() {
   // if (global.document || global.window) {
   //   throw new Error('Refusing to override existing document and window.');
   // }
@@ -71,6 +71,8 @@ export default function setupJSDom() {
     userAgent: 'node.js',
   };
 
+  global.Blob = window.Blob;
+
   win.VetsGov = {
     scroll: {
       duration: 0,
@@ -106,8 +108,6 @@ export default function setupJSDom() {
     matches: false,
   });
 
-  global.Blob = window.Blob;
-
   function copyProps(src, target) {
     const props = Object.getOwnPropertyNames(src)
       .filter(prop => typeof target[prop] === 'undefined')
@@ -124,9 +124,10 @@ export default function setupJSDom() {
   copyProps(win, global);
 }
 
+setupJSDom();
+
 export const mochaHooks = {
-  beforeEach(done) {
+  beforeEach() {
     setupJSDom();
-    done();
   },
 };
