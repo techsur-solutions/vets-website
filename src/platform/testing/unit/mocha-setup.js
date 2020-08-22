@@ -124,4 +124,9 @@ export default function setupJSDom() {
   copyProps(win, global);
 }
 
-setupJSDom();
+export const mochaHooks = {
+  beforeEach(done) {
+    setupJSDom();
+    done();
+  },
+};
