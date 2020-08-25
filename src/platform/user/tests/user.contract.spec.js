@@ -34,7 +34,6 @@ contractTest('User', 'VA.gov API', mockApi => {
                   last_name: 'Doe',
                   gender: 'F',
                   birth_date: '1985-01-01',
-                  multifactor: true,
                   verified: true,
                 },
                 veteran_status: {
