@@ -3,6 +3,7 @@ import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
 import SubmitButtons from '../../../src/js/review/SubmitButtons';
+import SubmittingButton from '../../../src/js/review/submit-buttons/SubmittingButton';
 
 describe('Schemaform review: <SubmitButtons>', () => {
   let formConfig;
@@ -24,7 +25,8 @@ describe('Schemaform review: <SubmitButtons>', () => {
       'Submit application',
     );
   });
-  it('should render pending', () => {
+
+  it('should render <SubmittingButton /> when pending', () => {
     const submission = {
       status: 'submitPending',
     };
@@ -33,11 +35,9 @@ describe('Schemaform review: <SubmitButtons>', () => {
       <SubmitButtons submission={submission} formConfig={formConfig} />,
     );
 
-    expect(tree.everySubTree('ProgressButton')[1].props.buttonText).to.equal(
-      'Sending...',
-    );
-    expect(tree.everySubTree('ProgressButton')[1].props.disabled).to.be.true;
+    expect(tree.everySubTree('SubmittingButton')[0].type).to.equal(SubmittingButton);
   });
+
   it('should render submitted', () => {
     const submission = {
       status: 'applicationSubmitted',

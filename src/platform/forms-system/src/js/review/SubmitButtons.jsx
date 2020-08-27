@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import ProgressButton from '../components/ProgressButton';
+import SubmittingButton from './submit-buttons/SubmittingButton';
 import { timeFromNow } from '../utilities/date';
 import { APP_TYPE_DEFAULT } from '../constants';
 
@@ -33,13 +34,10 @@ export default function SubmitButtons(props) {
       />
     );
   } else if (submission.status === 'submitPending') {
-    submitButton = (
-      <ProgressButton
-        onButtonClick={onSubmit}
-        buttonText="Sending..."
-        disabled
-        buttonClass="usa-button-disabled"
-      />
+    return (
+      <>
+        <SubmittingButton onBack={onBack} onSubmit={onSubmit} />
+      </>
     );
   } else if (submission.status === 'applicationSubmitted') {
     submitButton = (
