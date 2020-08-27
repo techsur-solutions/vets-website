@@ -104,6 +104,8 @@ createApplicationStatus(store, {
   widgetType: widgetTypes.HEALTH_CARE_APP_STATUS,
 });
 
+createAuthenticatedHomePage(store, widgetTypes.AUTHENTICATED_HOMEPAGE);
+
 createCallToActionWidget(store, widgetTypes.CTA);
 
 createEducationApplicationStatus(store, widgetTypes.EDUCATION_APP_STATUS);
@@ -165,8 +167,6 @@ createViewTestAndLabResultsPage(
   store,
   widgetTypes.VIEW_TEST_AND_LAB_RESULTS_PAGE,
 );
-
-createAuthenticatedHomePage(store, widgetTypes.AUTHENTICATED_HOMEPAGE);
 
 createChapter31Wizard(store, widgetTypes.CHAPTER_31_WIZARD);
 
