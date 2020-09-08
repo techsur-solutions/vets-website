@@ -1,4 +1,7 @@
 {
+  "main.css": "main.1ae9785022c56635ae0b-1599562933571.css",
   "main.js": "index.js",
-  "main.js.map": "index.js.map"
+  "main.css.map": "main.1ae9785022c56635ae0b-1599562933571.css.map",
+  "main.js.map": "index.js.map",
+  "style-consolidated.scss": "sourcesanspro-regular-webfont.woff2"
 }
