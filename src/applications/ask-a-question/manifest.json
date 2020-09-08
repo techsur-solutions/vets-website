@@ -1,7 +1,0 @@
-{
-  "appName": "Ask a Question",
-  "entryFile": "./app-entry.jsx",
-  "entryName": "ask-a-question",
-  "rootUrl": "/ask-a-question",
-  "production": false
-}

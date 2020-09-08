@@ -102,7 +102,8 @@ module.exports = env => {
 
   const baseConfig = {
     mode: 'development',
-    entry: entryFiles,
+    entry: './src/index.js',
+    // entry: "./src/platforms/form_systems"
     output: {
       path: outputPath,
       publicPath: '/generated/',

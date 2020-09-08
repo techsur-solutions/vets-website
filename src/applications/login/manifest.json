@@ -1,7 +1,0 @@
-{
-  "appName": "Login Page",
-  "entryFile": "./app-entry.jsx",
-  "entryName": "login-page",
-  "rootUrl": "/sign-in",
-  "e2eTestsDisabled": true
-}
