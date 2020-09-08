@@ -80,7 +80,7 @@ module.exports = env => {
     ...env,
     // Using a getter so we can reference the buildtype
     get destination() {
-      return path.resolve(__dirname, '../', 'build', this.buildtype);
+      return path.resolve(__dirname, '../', 'dist', this.buildtype);
     },
   };
 
@@ -101,18 +101,25 @@ module.exports = env => {
   const outputPath = `${buildOptions.destination}/generated`;
 
   const baseConfig = {
-    mode: 'development',
-    entry: './src/index.js',
-    // entry: "./src/platforms/form_systems"
+    // mode: 'development',
+    // entry: './src/index.jsx',
+    // // entry: "./src/platforms/form_systems"
+    // output: {
+    //   path: outputPath,
+    //   publicPath: '/generated/',
+    //   filename: !isOptimizedBuild
+    //     ? '[name].entry.js'
+    //     : `[name].entry.[chunkhash]-${timestamp}.js`,
+    //   chunkFilename: !isOptimizedBuild
+    //     ? '[name].entry.js'
+    //     : `[name].entry.[chunkhash]-${timestamp}.js`,
+    // },
+    mode: 'production',
+    entry: './src/index.jsx',
     output: {
-      path: outputPath,
-      publicPath: '/generated/',
-      filename: !isOptimizedBuild
-        ? '[name].entry.js'
-        : `[name].entry.[chunkhash]-${timestamp}.js`,
-      chunkFilename: !isOptimizedBuild
-        ? '[name].entry.js'
-        : `[name].entry.[chunkhash]-${timestamp}.js`,
+      path: path.resolve(__dirname, '../', 'dist'),
+      filename: 'index.js',
+      libraryTarget: 'commonjs2',
     },
     module: {
       rules: [
