@@ -72,7 +72,7 @@ function getEntryPoints(entry) {
 module.exports = env => {
   const buildOptions = {
     api: '',
-    buildtype: 'localhost',
+    buildtype: 'vagovprod',
     host: 'localhost',
     port: 3001,
     scaffold: false,
