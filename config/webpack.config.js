@@ -121,6 +121,10 @@ module.exports = env => {
       filename: 'index.js',
       libraryTarget: 'commonjs2',
     },
+    resolve: {
+      extensions: ['.js', '.jsx', '.scss'],
+      alias: { react: path.resolve('./node_modules/react') },
+    },
     module: {
       rules: [
         {
