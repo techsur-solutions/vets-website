@@ -15,6 +15,7 @@ const WebpackBar = require('webpackbar');
 const headerFooterData = require('../src/platform/landing-pages/header-footer-data.json');
 const BUCKETS = require('../src/site/constants/buckets');
 const ENVIRONMENTS = require('../src/site/constants/environments');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const {
   getAppManifests,
@@ -248,9 +249,7 @@ module.exports = env => {
       }),
 
       new MiniCssExtractPlugin({
-        filename: !isOptimizedBuild
-          ? '[name].css'
-          : `[name].[contenthash]-${timestamp}.css`,
+        filename: '[name].css',
       }),
 
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
