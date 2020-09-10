@@ -249,7 +249,7 @@ module.exports = env => {
       }),
 
       new MiniCssExtractPlugin({
-        filename: true ? 'va.theme.min.css' : `[name].[contenthash]-${timestamp}.css`,
+        filename: '[name].css',
       }),
 
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
