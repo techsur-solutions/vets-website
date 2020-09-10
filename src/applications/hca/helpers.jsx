@@ -18,7 +18,7 @@ import { getInactivePages } from 'platform/forms/helpers';
 import { isValidDate } from 'platform/forms/validations';
 import { isInMVI } from 'platform/user/selectors';
 
-import facilityLocator from '../facility-locator/manifest.json';
+//import facilityLocator from '../facility-locator/manifest.json';
 
 export function prefillTransformer(pages, formData, metadata, state) {
   let newData = formData;
@@ -99,42 +99,42 @@ export function transform(formConfig, form) {
   });
 }
 
-export const facilityHelp = (
-  <div>
-    <div>
-      OR{' '}
-      <a
-        href={facilityLocator.rootUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Find locations with the VA Facility Locator
-      </a>
-    </div>
-    <br />
-    If you’re looking for medical care outside the continental U.S. or Guam,
-    you’ll need to sign up for our Foreign Medical Program.{' '}
-    <a
-      href="https://www.va.gov/COMMUNITYCARE/programs/veterans/fmp/index.asp"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Learn more about the Foreign Medical Program
-    </a>
-    .<br />
-    <p>
-      You can also visit{' '}
-      <a
-        href="https://www.benefits.va.gov/PERSONA/veteran-abroad.asp"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Veterans Living Abroad
-      </a>
-      .
-    </p>
-  </div>
-);
+// export const facilityHelp = (
+//   <div>
+//     <div>
+//       OR{' '}
+//       <a
+//         href={facilityLocator.rootUrl}
+//         target="_blank"
+//         rel="noopener noreferrer"
+//       >
+//         Find locations with the VA Facility Locator
+//       </a>
+//     </div>
+//     <br />
+//     If you’re looking for medical care outside the continental U.S. or Guam,
+//     you’ll need to sign up for our Foreign Medical Program.{' '}
+//     <a
+//       href="https://www.va.gov/COMMUNITYCARE/programs/veterans/fmp/index.asp"
+//       rel="noopener noreferrer"
+//       target="_blank"
+//     >
+//       Learn more about the Foreign Medical Program
+//     </a>
+//     .<br />
+//     <p>
+//       You can also visit{' '}
+//       <a
+//         href="https://www.benefits.va.gov/PERSONA/veteran-abroad.asp"
+//         rel="noopener noreferrer"
+//         target="_blank"
+//       >
+//         Veterans Living Abroad
+//       </a>
+//       .
+//     </p>
+//   </div>
+// );
 
 export function fileHelp({ formContext }) {
   if (formContext.reviewMode) {

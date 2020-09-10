@@ -9,10 +9,10 @@ import { getNextPagePath } from 'platform/forms-system/src/js/routing';
 import recordEvent from 'platform/monitoring/record-event';
 import _ from 'platform/utilities/data';
 
-import {
-  formDescriptions,
-  formBenefits,
-} from 'applications/personalization/dashboard/helpers';
+// import {
+//   formDescriptions,
+//   formBenefits,
+// } from 'applications/personalization/dashboard/helpers';
 import { toggleLoginModal } from 'platform/site-wide/user-nav/actions';
 import { fetchInProgressForm, removeInProgressForm } from './actions';
 import FormStartControls from './FormStartControls';
@@ -67,9 +67,9 @@ class SaveInProgressIntro extends React.Component {
                   <strong>Your {appType} is in progress</strong>
                 </div>
                 <div className="saved-form-metadata-container">
-                  <span className="saved-form-item-metadata">
+                  {/* <span className="saved-form-item-metadata">
                     Your {formDescriptions[formId]} is in progress.
-                  </span>
+                  </span> */}
                   <br />
                   <span className="saved-form-item-metadata">
                     Your {appType} was last saved on {lastSavedDateTime}
@@ -95,11 +95,11 @@ class SaveInProgressIntro extends React.Component {
                   <strong>Your {appType} has expired</strong>
                 </div>
                 <div className="saved-form-metadata-container">
-                  <span className="saved-form-metadata">
+                  {/* <span className="saved-form-metadata">
                     Your saved {formDescriptions[formId]} has expired. If you
                     want to apply for {formBenefits[formId]}, please start a new{' '}
                     {appType}.
-                  </span>
+                  </span> */}
                 </div>
                 <div>{this.props.children}</div>
               </div>
