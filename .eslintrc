@@ -42,7 +42,7 @@
     /* || Eslint main rules || */
     "camelcase": [2, { "properties": "always" }], // Override airbnb style.
     // "func-names": 2,
-    "no-console": 2,
+    "no-console": 0,
     "no-unused-vars": [
       2,
       { "args": "after-used", "argsIgnorePattern": "^_", "vars": "local" }
