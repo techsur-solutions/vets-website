@@ -6,5 +6,8 @@ import { RoutedSavablePage } from './platform/forms/save-in-progress/RoutedSavab
 import { RoutedSavableApp } from './platform/forms/save-in-progress/RoutedSavableApp';
 import { RoutedSavableReviewPage } from './platform/forms/save-in-progress/RoutedSavableReviewPage';
 import { formConfig } from './applications/hca/config/form';
+import {FormNav} from './platform/forms-system/src/js/components/FormNav';
 
-export default { RoutedSavablePage, Hello, RoutedSavableReviewPage, VetsCss,formConfig,RoutedSavableApp };
+import {FormPage} from './platform/forms-system/src/js/containers/FormPage';
+
+export default { RoutedSavablePage, Hello, RoutedSavableReviewPage, VetsCss,formConfig,RoutedSavableApp,FormNav,FormPage };
