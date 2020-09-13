@@ -53,6 +53,7 @@ class FormPage extends React.Component {
   }
 
   onChange = formData => {
+    console.log("onChange formData ***** ",formData);
     const { pageConfig } = this.props.route;
     let newData = formData;
     if (pageConfig.showPagePerItem) {
@@ -67,11 +68,13 @@ class FormPage extends React.Component {
     if (typeof pageConfig.updateFormData === 'function') {
       newData = pageConfig.updateFormData(this.formData(), newData);
     }
+    console.log("onChange newData ***** ",newData);
     this.props.setData(newData);
   };
 
   onSubmit = ({ formData }) => {
     const { form, params, route, location } = this.props;
+    console.log("onSubmit formData ***** ",formData);
     console.log("line no 75 onSubmit form***   ",form);
     console.log("line no 75 onSubmit params***   ",params);
     console.log("line no 75 onSubmit route***   ",route);
@@ -94,6 +97,7 @@ class FormPage extends React.Component {
   }; 
 
   formData = () => {
+    console.log("formData 100 ****** ",this.props.form.data);
     const { pageConfig } = this.props.route;
     return this.props.route.pageConfig.showPagePerItem
       ? _.get(
