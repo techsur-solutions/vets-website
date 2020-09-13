@@ -123,7 +123,13 @@ class FormPage extends React.Component {
       formContext,
       appStateData,
     } = this.props;
-
+    
+    console.log("render route ****** ",route);
+    console.log("render params ****** ",params);
+    console.log("render form ****** ",form);
+    console.log("render contentAfterButtons ****** ",contentAfterButtons);
+    console.log("render formContext ****** ",formContext);
+    console.log("render appStateData ****** ",appStateData);
     let { schema, uiSchema } = form.pages[route.pageConfig.pageKey];
 
     const pageClasses = classNames('form-panel', route.pageConfig.pageClass);
