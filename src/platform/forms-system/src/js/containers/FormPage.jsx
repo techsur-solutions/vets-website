@@ -53,11 +53,7 @@ class FormPage extends React.Component {
   }
 
   onChange = formData => {
-<<<<<<< Updated upstream
     console.log("onChange formData ***** ",formData);
-=======
-    console.log("onChange form data **** ",formData);
->>>>>>> Stashed changes
     const { pageConfig } = this.props.route;
     let newData = formData;
     if (pageConfig.showPagePerItem) {
