@@ -579,6 +579,7 @@ export function updateSchemaAndData(
 }
 
 export function recalculateSchemaAndData(initialState) {
+  console.log("******Initial State recalculate ********", initialState);
   return Object.keys(initialState.pages).reduce((state, pageKey) => {
     // on each data change, we need to do the following steps
     // Recalculate any required fields, based on the new data
@@ -614,7 +615,7 @@ export function recalculateSchemaAndData(initialState) {
         );
       }
     }
-
+    console.log("*****NEW STATE***", newState);
     return newState;
   }, initialState);
 }
