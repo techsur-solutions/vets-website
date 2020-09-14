@@ -70,6 +70,7 @@ class FormPage extends React.Component {
       newData = pageConfig.updateFormData(this.formData(), newData);
     }
     console.log("onChange newData ***** ",newData);
+    console.log("onChange props ***** ",this.props);
     this.props.setData(newData);
   };
 
