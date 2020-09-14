@@ -30,6 +30,7 @@ class FormApp extends React.Component {
 
   render() {
     const { currentLocation, formConfig, children, formData } = this.props;
+
     const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
     const lastPathComponent = currentLocation.pathname.split('/').pop();
     const isIntroductionPage = trimmedPathname.endsWith('introduction');
@@ -43,6 +44,8 @@ class FormApp extends React.Component {
     let formTitle;
     let formNav;
     let renderedChildren = children;
+
+    console.log(formTitle+"  48th formApp *******  ",renderedChildren);
     // Show title only if:
     // 1. we're not on the intro page *or* one of the additionalRoutes
     //    specified in the form config
@@ -54,7 +57,14 @@ class FormApp extends React.Component {
     // Show nav only if we're not on the intro, form-saved, error, confirmation
     // page or one of the additionalRoutes specified in the form config
     // Also add form classes only if on an actual form page
+
+
+    console.log(isNonFormPage+"      in FormApp going to render formNav ******* ",trimmedPathname);
     if (!isNonFormPage && isInProgress(trimmedPathname)) {
+      console.log("      in FormApp going to render formData ******* ",formData);
+      console.log("      in FormApp going to render formConfig ******* ",formConfig);
+      console.log("      in FormApp going to render trimmedPathname ******* ",trimmedPathname);
+     
       formNav = (
         <FormNav
           formData={formData}

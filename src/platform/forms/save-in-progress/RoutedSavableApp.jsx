@@ -230,6 +230,11 @@ class RoutedSavableApp extends React.Component {
 
   render() {
     const { currentLocation, formConfig, children, loadedStatus } = this.props;
+    console.log("RoutedSavableApp ******* currentLocation     ",currentLocation);
+    console.log("RoutedSavableApp ******* formConfig      ",formConfig);
+    console.log("RoutedSavableApp ******* children         ",children);
+    console.log("RoutedSavableApp ******* loadedStatus    ",currentLocation);
+
     const appType = formConfig?.customText?.appType || APP_TYPE_DEFAULT;
     const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
     let content;
@@ -255,6 +260,8 @@ class RoutedSavableApp extends React.Component {
     ) {
       content = <LoadingIndicator message={`Saving your ${appType}...`} />;
     } else {
+
+      console.log(" going to render formApp ********  ",formConfig+"    ******   loction  *******"+currentLocation);
       content = (
         <FormApp formConfig={formConfig} currentLocation={currentLocation}>
           {children}

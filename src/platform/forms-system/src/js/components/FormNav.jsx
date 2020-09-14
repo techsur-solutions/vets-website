@@ -22,18 +22,29 @@ export default class FormNav extends React.Component {
   render() {
     const { formConfig, currentPath, formData } = this.props;
 
+    console.log("FormNav  *********  formConfig  ****** ",formConfig);
+    console.log("FormNav  *********  currentPath  ****** ",currentPath);
+    console.log("FormNav  *********  formData  ****** ",formData);
+
     // This is converting the config into a list of pages with chapter keys,
     // finding the current page, then getting the chapter name using the key
     const formPages = createFormPageList(formConfig);
+    console.log("FormNav  *********  formPages  ****** ", formData);
     const pageList = createPageList(formConfig, formPages);
+    console.log("FormNav  *********  pageList  ****** ", formData);
 
     const eligiblePageList = getActiveExpandedPages(pageList, formData);
+    console.log("FormNav  *********  eligiblePageList  ****** ", eligiblePageList);
 
     const chapters = _.uniq(
       eligiblePageList.map(p => p.chapterKey).filter(key => !!key),
     );
+    console.log("FormNav  *********  chapters  ****** ", chapters);
+
 
     let page = eligiblePageList.filter(p => p.path === currentPath)[0];
+
+    console.log("FormNav  *********  page  ****** ", page);
     // If the page isn’t active, it won’t be in the eligiblePageList
     // This is a fallback to still find the chapter name if you open the page directly
     // (the chapter index will probably be wrong, but this isn’t a scenario that happens in normal use)
@@ -43,6 +54,7 @@ export default class FormNav extends React.Component {
       );
     }
 
+    console.log("FormNav  *********  page 57  ****** ", page);
     let current;
     let chapterName;
     if (page) {
@@ -53,11 +65,12 @@ export default class FormNav extends React.Component {
           ? formConfig?.customText?.reviewPageTitle ||
             REVIEW_APP_DEFAULT_MESSAGE
           : formConfig.chapters[page.chapterKey].title;
+          console.log("FormNav  *********  chapterName ****** ", chapterName);
       if (typeof chapterName === 'function') {
         chapterName = chapterName();
       }
     }
-
+    console.log("FormNav  *********  chapterName 73 ****** ", chapterName+" *******    "+chapters.length);
     return (
       <div>
         <SegmentedProgressBar total={chapters.length} current={current} />

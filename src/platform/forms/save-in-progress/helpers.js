@@ -22,9 +22,13 @@ export function createRoutesWithSaveInProgress(formConfig) {
     });
   }
 
+  
   const formPages = createFormPageList(formConfig);
+  console.log("25 *****createRoutesWithSaveInProgress formPages *** ",formPages) ;
   const pageList = createPageList(formConfig, formPages);
+  console.log("25 *****createRoutesWithSaveInProgress pageList *** ",pageList) ;
   const newRoutes = createRoutes(formConfig);
+  console.log("25 *****createRoutesWithSaveInProgress newRoutes *** ",newRoutes) ;
 
   newRoutes.forEach((route, index) => {
     let newRoute;
@@ -69,5 +73,6 @@ export function createRoutesWithSaveInProgress(formConfig) {
     });
   }
 
+  console.log("76 *****createRoutesWithSaveInProgress newRoutes *** ",newRoutes) ;
   return newRoutes;
 }
