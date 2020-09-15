@@ -42,7 +42,7 @@ class FormApp extends React.Component {
     const isIntroductionPage = trimmedPathname.endsWith('introduction');
     const isNonFormPage = this.nonFormPages.includes(lastPathComponent);
     const Footer = formConfig.footerContent;
-    const title =
+    const title = 
       typeof formConfig.title === 'function'
         ? formConfig.title(this.props)
         : formConfig.title;
