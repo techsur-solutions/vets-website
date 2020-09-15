@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
+//import { withRouter } from 'react-router';
+//import { connect } from 'react-redux';
 import Scroll from 'react-scroll';
 
 import FormNav from '../components/FormNav';
@@ -22,12 +22,13 @@ class FormApp extends React.Component {
     if (additionalRoutes) {
       this.nonFormPages = additionalRoutes.map(route => route.path);
     }
-
+    console.log("in form App ********    ");
     setGlobalScroll();
 
     if (window.History) {
       window.History.scrollRestoration = 'manual';
     }
+    console.log("in form App ********    ");
   }
 
   render() {
@@ -111,10 +112,10 @@ class FormApp extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  formData: state.form.data,
-});
+// const mapStateToProps = state => ({
+//   formData: state.form.data,
+// });
 
-export default withRouter( connect(mapStateToProps)(FormApp));
+// export default connect(mapStateToProps)(FormApp);
 
 export { FormApp };

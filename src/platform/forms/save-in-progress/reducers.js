@@ -22,6 +22,7 @@ import {
   recalculateSchemaAndData,
 } from 'platform/forms-system/src/js/state/helpers';
 import reducers from 'platform/forms-system/src/js/state/reducers';
+import { ConsoleTransportOptions } from 'winston/lib/winston/transports';
 
 export const saveInProgressReducers = {
   [SET_SAVE_FORM_STATUS]: (state, action) => {
@@ -136,9 +137,10 @@ export function createSaveInProgressInitialState(formConfig, initialState) {
 }
 
 export function createSaveInProgressFormReducer(formConfig) {
+  console.log("createSaveInProgressFormReducer **** ",formConfig);
   let formReducers = reducers;
   let initialState = createInitialState(formConfig);
-
+  console.log("createSaveInProgressFormReducer initialState    **** ",initialState);
   if (!formConfig.disableSave) {
     formReducers = Object.assign({}, formReducers, saveInProgressReducers);
     initialState = createSaveInProgressInitialState(formConfig, initialState);
