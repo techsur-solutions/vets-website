@@ -1,5 +1,7 @@
 import React from 'react';
-//import { connect } from 'react-redux';
+
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
 import Scroll from 'react-scroll';
 
 import FormNav from '../components/FormNav';
@@ -29,9 +31,9 @@ class FormApp extends React.Component {
   }
 
   render() {
-    //const { currentLocation, formConfig, children, formData } = this.props;
-    const { currentLocation, formConfig, children } = this.props
-    const formData={};
+    const { currentLocation, formConfig, children, formData } = this.props;
+    //const { currentLocation, formConfig, children } = this.props
+    //const formData={};
     console.log("in form App ********    ");
     console.log("in form App ********  formData  ***** ",formData);
     const trimmedPathname = currentLocation.pathname;
@@ -109,10 +111,10 @@ class FormApp extends React.Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   formData: state.form.data,
-// });
+const mapStateToProps = state => ({
+  formData: state.form.data,
+});
 
-// export default connect(mapStateToProps)(FormApp);
+export default withRouter( connect(mapStateToProps)(FormApp));
 
 export { FormApp };
