@@ -4,7 +4,7 @@ import recordEvent from 'platform/monitoring/record-event';
 
 import isVATeamSiteSubdomain from '../../../utilities/environment/va-subdomain';
 import { hasSession } from 'platform/user/profile/utilities';
-import HelpMenu from './HelpMenu';
+// import HelpMenu from './HelpMenu';
 import SearchMenu from './SearchMenu';
 import SignInProfileMenu from './SignInProfileMenu';
 
@@ -73,10 +73,10 @@ class SearchHelpSignIn extends React.Component {
           isOpen={this.props.isMenuOpen.search}
           clickHandler={this.handleSearchMenuClick}
         />
-        <HelpMenu
+        {/* <HelpMenu
           isOpen={this.props.isMenuOpen.help}
           clickHandler={this.handleHelpMenuClick}
-        />
+        /> */}
         <div className="sign-in-nav">{this.renderSignInContent()}</div>
       </div>
     );

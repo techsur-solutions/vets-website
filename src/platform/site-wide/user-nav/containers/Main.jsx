@@ -21,7 +21,7 @@ import {
   toggleSearchHelpUserMenu,
 } from 'platform/site-wide/user-nav/actions';
 
-import SearchHelpSignIn from '../components/SearchHelpSignIn';
+// import SearchHelpSignIn from '../components/SearchHelpSignIn';
 import { selectUserGreeting } from '../selectors';
 import AutoSSO from './AutoSSO';
 
@@ -147,7 +147,7 @@ export class Main extends React.Component {
   render() {
     return (
       <div className="profile-nav-container">
-        <SearchHelpSignIn
+        {/* <SearchHelpSignIn
           isLOA3={this.props.isLOA3}
           isLoggedIn={this.props.currentlyLoggedIn}
           isMenuOpen={this.props.utilitiesMenuIsOpen}
@@ -155,7 +155,7 @@ export class Main extends React.Component {
           onSignInSignUp={this.signInSignUp}
           userGreeting={this.props.userGreeting}
           toggleMenu={this.props.toggleSearchHelpUserMenu}
-        />
+        /> */}
         <FormSignInModal
           onClose={this.closeFormSignInModal}
           onSignIn={this.openLoginModal}
