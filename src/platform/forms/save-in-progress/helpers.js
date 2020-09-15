@@ -34,23 +34,30 @@ export function createRoutesWithSaveInProgress(formConfig) {
     let newRoute;
 
     // rewrite page component
-    if (!protectedRoutes.has(route.path)) {
-      console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ",newRoutes) ;
-      newRoute = Object.assign({}, route, {
-        component: RoutedSavablePage,
-        formConfig,
-      });
-      newRoutes[index] = newRoute;
-    }
+    // if (!protectedRoutes.has(route.path)) {
+    //   console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ",newRoutes) ;
+    //   newRoute = Object.assign({}, route, {
+    //     component: RoutedSavablePage,
+    //     formConfig,
+    //   });
+    //   newRoutes[index] = newRoute;
+    // }
+
+    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ",newRoutes) ;
+    newRoute = Object.assign({}, route, {
+      component: RoutedSavablePage,
+      formConfig,
+    });
+    newRoutes[index] = newRoute;
 
     // rewrite review page component
-    if (route.path === 'review-and-submit') {
-      console.log("25 *****createRoutesWithSaveInProgress RoutedSavableReviewPage newRoutes *** ",newRoutes);
-      newRoute = Object.assign({}, route, {
-        component: RoutedSavableReviewPage,
-      });
-      newRoutes[index] = newRoute;
-    }
+    // if (route.path === 'review-and-submit') {
+    //   console.log("25 *****createRoutesWithSaveInProgress RoutedSavableReviewPage newRoutes *** ",newRoutes);
+    //   newRoute = Object.assign({}, route, {
+    //     component: RoutedSavableReviewPage,
+    //   });
+    //   newRoutes[index] = newRoute;
+    // }
   });
 
   if (!formConfig.disableSave) {

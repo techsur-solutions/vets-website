@@ -56,21 +56,23 @@ class RoutedSavableApp extends React.Component {
     const { additionalRoutes = [] } = formConfig;
     const additionalSafePaths =
       additionalRoutes && additionalRoutes.map(route => route.path);
-    const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
-    const resumeForm = trimmedPathname.endsWith('resume');
-    const devRedirect =
-      (!environment.isLocalhost() &&
-        !currentLocation.search.includes('skip')) ||
-      currentLocation.search.includes('redirect');
-    const goToStartPage = resumeForm || devRedirect;
-    if (
-      isInProgressPath(currentLocation.pathname, additionalSafePaths) &&
-      goToStartPage
-    ) {
-      // We started on a page that isn't the first, so after we know whether
-      //  we're logged in or not, we'll load or redirect as needed.
-      this.shouldRedirectOrLoad = true;
-    }
+    // const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
+    // const resumeForm = trimmedPathname.endsWith('resume');
+    // const devRedirect =
+    //   (!environment.isLocalhost() &&
+    //     !currentLocation.search.includes('skip')) ||
+    //   currentLocation.search.includes('redirect');
+    // const goToStartPage = resumeForm || devRedirect;
+    // if (
+    //   isInProgressPath(currentLocation.pathname, additionalSafePaths) &&
+    //   goToStartPage
+    // ) {
+    //   // We started on a page that isn't the first, so after we know whether
+    //   //  we're logged in or not, we'll load or redirect as needed.
+    //   this.shouldRedirectOrLoad = true;
+    // }
+
+    this.shouldRedirectOrLoad = true;
   }
 
   componentDidMount() {
@@ -238,36 +240,45 @@ class RoutedSavableApp extends React.Component {
     const appType = formConfig?.customText?.appType || APP_TYPE_DEFAULT;
     const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
     let content;
-    const loadingForm =
-      trimmedPathname.endsWith('resume') ||
-      loadedStatus === LOAD_STATUSES.pending;
-    if (
-      (!formConfig.disableSave &&
-        loadingForm &&
-        this.props.prefillStatus === PREFILL_STATUSES.pending) ||
-      (!formConfig.disableSave && this.shouldRedirectOrLoad)
-    ) {
-      content = (
-        <LoadingIndicator message="Retrieving your profile information..." />
-      );
-    } else if (!formConfig.disableSave && loadingForm) {
-      content = (
-        <LoadingIndicator message={`Retrieving your saved ${appType}...`} />
-      );
-    } else if (
-      !formConfig.disableSave &&
-      this.props.savedStatus === SAVE_STATUSES.pending
-    ) {
-      content = <LoadingIndicator message={`Saving your ${appType}...`} />;
-    } else {
+   
 
-      console.log(" going to render formApp ********  ",formConfig+"    ******   loction  *******"+currentLocation);
-      content = (
-        <FormApp formConfig={formConfig} currentLocation={currentLocation}>
-          {children}
-        </FormApp>
-      );
-    }
+        console.log(" going to render formApp ********  ",formConfig+"    ******   loction  *******"+currentLocation);
+        content = (
+          <FormApp formConfig={formConfig} currentLocation={currentLocation}>
+            {children}
+          </FormApp>
+        );
+      
+        // const loadingForm =
+        // trimmedPathname.endsWith('resume') ||
+        // loadedStatus === LOAD_STATUSES.pending;
+    // if (
+    //   (!formConfig.disableSave &&
+    //     loadingForm &&
+    //     this.props.prefillStatus === PREFILL_STATUSES.pending) ||
+    //   (!formConfig.disableSave && this.shouldRedirectOrLoad)
+    // ) {
+    //   content = (
+    //     <LoadingIndicator message="Retrieving your profile information..." />
+    //   );
+    // } else if (!formConfig.disableSave && loadingForm) {
+    //   content = (
+    //     <LoadingIndicator message={`Retrieving your saved ${appType}...`} />
+    //   );
+    // } else if (
+    //   !formConfig.disableSave &&
+    //   this.props.savedStatus === SAVE_STATUSES.pending
+    // ) {
+    //   content = <LoadingIndicator message={`Saving your ${appType}...`} />;
+    // } else {
+
+    //   console.log(" going to render formApp ********  ",formConfig+"    ******   loction  *******"+currentLocation);
+    //   content = (
+    //     <FormApp formConfig={formConfig} currentLocation={currentLocation}>
+    //       {children}
+    //     </FormApp>
+    //   );
+    // }
 
     return (
       <div>
