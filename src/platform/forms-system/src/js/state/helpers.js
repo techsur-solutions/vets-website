@@ -622,6 +622,7 @@ export function recalculateSchemaAndData(initialState) {
 }
 
 export function createInitialState(formConfig) {
+  try{
   console.log("createInitialState ****** ");
   let initialState = {
     submission: {
@@ -643,14 +644,17 @@ export function createInitialState(formConfig) {
     trackingPrefix: formConfig.trackingPrefix,
   };
   console.log("initialState ****** ",initialState);
+  
   const pageAndDataState = createFormPageList(formConfig).reduce(
     (state, page) => {
       const definitions = _.assign(
         formConfig.defaultDefinitions || {},
         page.schema.definitions,
       );
+      console.log("initialState definitions ****** ",definitions);
       let schema = replaceRefSchemas(page.schema, definitions, page.pageKey);
       // Throw an error if the new schema is invalid
+      console.log("initialState schema ****** ",schema);
       checkValidSchema(schema);
       schema = updateItemsSchema(schema);
       const isArrayPage = page.showPagePerItem;
@@ -672,7 +676,7 @@ export function createInitialState(formConfig) {
 
       state.data = _.merge(state.data, data);
       /* eslint-enable no-param-reassign */
-
+      console.log("initialState schema ****** ",schema);
       return state;
     },
     {
@@ -680,11 +684,14 @@ export function createInitialState(formConfig) {
       pages: {},
     },
   );
-
+  console.log("initialState ******pageAndDataState  ",pageAndDataState);
   initialState = _.assign(initialState, pageAndDataState);
   // Take another pass and recalculate the schema and data based on the default data
   // We do this to avoid passing undefined for the whole form state when the form first renders
   initialState = recalculateSchemaAndData(initialState);
+  }catch(error){
+    console.log(error);
+  }
 
   return initialState;
 }
