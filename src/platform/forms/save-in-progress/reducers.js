@@ -149,5 +149,6 @@ export function createSaveInProgressFormReducer(formConfig,reducer) {
     initialState = createSaveInProgressInitialState(formConfig, initialState);
   }
 
+  console.log("createSchemaFormReducer   *******    ",createSchemaFormReducer(formConfig, initialState, formReducers))
   return createSchemaFormReducer(formConfig, initialState, formReducers);
 }
