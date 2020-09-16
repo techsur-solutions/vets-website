@@ -622,7 +622,7 @@ export function recalculateSchemaAndData(initialState) {
 }
 
 export function createInitialState(formConfig) {
-  try{
+ 
   console.log("createInitialState ****** ");
   let initialState = {
     submission: {
@@ -689,9 +689,5 @@ export function createInitialState(formConfig) {
   // Take another pass and recalculate the schema and data based on the default data
   // We do this to avoid passing undefined for the whole form state when the form first renders
   initialState = recalculateSchemaAndData(initialState);
-  }catch(error){
-    console.log(error);
-  }
-
   return initialState;
 }

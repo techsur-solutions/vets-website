@@ -8,7 +8,7 @@ export default function createSchemaFormReducer(
 ) {
   return (state = initialState, action) => {
     const reducer = formReducers[action.type];
-
+  console.log("createSchemaFormReducer **** ",reducer);
     if (reducer) {
       return reducer(state, action);
     }
