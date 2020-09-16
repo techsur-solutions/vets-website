@@ -22,7 +22,7 @@ import {
   recalculateSchemaAndData,
 } from 'platform/forms-system/src/js/state/helpers';
 import reducers from 'platform/forms-system/src/js/state/reducers';
-import { ConsoleTransportOptions } from 'winston/lib/winston/transports';
+//import { ConsoleTransportOptions } from 'winston/lib/winston/transports';
 
 export const saveInProgressReducers = {
   [SET_SAVE_FORM_STATUS]: (state, action) => {
