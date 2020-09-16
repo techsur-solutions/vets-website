@@ -2,7 +2,7 @@ import 'platform/polyfills';
 import cookie from 'cookie';
 
 import buckets from 'site/constants/buckets';
-import environments from 'site/constants/environments';
+//import environments from 'site/constants/environments';
 
 import createCommonStore from 'platform/startup/store';
 import environment from 'platform/utilities/environment';
@@ -123,13 +123,13 @@ function mountReactComponents(headerFooterData, commonStore) {
   renderFooter(headerFooterData.footerData);
 }
 
-function getAssetHostName() {
-  if (environment.BUILDTYPE === environments.LOCALHOST) {
-    return environment.BASE_URL;
-  }
+// function getAssetHostName() {
+//   if (environment.BUILDTYPE === environments.LOCALHOST) {
+//     return environment.BASE_URL;
+//   }
 
-  return buckets[environment.BUILDTYPE];
-}
+//   return buckets[environment.BUILDTYPE];
+// }
 
 function removeCurrentHeaderFooter() {
   const observer = new MutationObserver(createMutationObserverCallback());
@@ -277,7 +277,7 @@ function main() {
       document.readyState === 'loaded' ||
       document.readyState === 'interactive'
     ) {
-      activateInjectedAssets();
+      //activateInjectedAssets();
     } else {
       document.addEventListener('DOMContentLoaded', activateInjectedAssets);
     }

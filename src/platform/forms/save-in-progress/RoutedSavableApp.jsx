@@ -231,20 +231,20 @@ class RoutedSavableApp extends React.Component {
   };
 
   render() {
-    const { currentLocation, formConfig, children, loadedStatus } = this.props;
-    console.log("RoutedSavableApp ******* currentLocation     ",currentLocation);
+    const { currentLocation, formConfig, children, formData } = this.props;
+    console.log("RoutedSavableApp ******* formData     ",formData);
     console.log("RoutedSavableApp ******* formConfig      ",formConfig);
     console.log("RoutedSavableApp ******* children         ",children);
-    console.log("RoutedSavableApp ******* loadedStatus    ",currentLocation);
+    console.log("RoutedSavableApp ******* currentLocation    ",currentLocation);
 
     const appType = formConfig?.customText?.appType || APP_TYPE_DEFAULT;
-    const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
+   // const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
     let content;
    
 
         console.log(" going to render formApp ********  ",formConfig+"    ******   loction  *******"+currentLocation);
         content = (
-          <FormApp formConfig={formConfig} currentLocation={currentLocation}>
+          <FormApp formConfig={formConfig} currentLocation={currentLocation} formData={formData}>
             {children}
           </FormApp>
         );
