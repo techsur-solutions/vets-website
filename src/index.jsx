@@ -9,7 +9,7 @@ import { formConfig } from './applications/hca/config/form';
 import { FormNav } from './platform/forms-system/src/js/components/FormNav';
 import { createRoutesWithSaveInProgress } from './platform/forms/save-in-progress/helpers';
 import { startApp } from './platform/startup';
-//import { createSaveInProgressFormReducer } from './platform/forms/save-in-progress/reducers';
+import { createSaveInProgressFormReducer } from './platform/forms/save-in-progress/reducers';
 
 import { FormPage } from './platform/forms-system/src/js/containers/FormPage';
 
@@ -23,6 +23,6 @@ export default {
   FormNav,
   FormPage,
   createRoutesWithSaveInProgress,
-  startApp
-  //createSaveInProgressFormReducer
+  startApp,
+  createSaveInProgressFormReducer
 };
