@@ -23,7 +23,7 @@ if (!isPort80) {
   // production environment on our local machines.
   const LOCALHOST_ENV = ENVIRONMENT_CONFIGURATIONS[ENVIRONMENTS.LOCALHOST];
   environment.API_URL = LOCALHOST_ENV.API_URL;
-  environment.BASE_URL = LOCALHOST_ENV.BASE_URL;
+  environment.BASE_URL = "http://localhost:3000/";
 }
 
 if (environment.BUILDTYPE === ENVIRONMENTS.LOCALHOST) {
@@ -44,7 +44,7 @@ export default Object.freeze({
   BUILDTYPE: environment.BUILDTYPE,
 
   /** The address of the FE website configured for this environment. */
-  BASE_URL: environment.BASE_URL,
+  BASE_URL: "http://localhost:3000/",
 
   /**
    * The address of the API configured for this environment. Rather than using this directly,
