@@ -139,6 +139,7 @@ export function createSaveInProgressInitialState(formConfig, initialState) {
 export function createSaveInProgressFormReducer(formConfig) {
   console.log("createSaveInProgressFormReducer **** ",formConfig);
   let formReducers = reducers;
+  console.log("createSaveInProgressFormReducer ****formReducers ",formReducers);
   let initialState = createInitialState(formConfig);
   console.log("createSaveInProgressFormReducer initialState    **** ",initialState);
   if (!formConfig.disableSave) {

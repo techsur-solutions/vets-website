@@ -585,7 +585,8 @@ export function recalculateSchemaAndData(initialState) {
     // Recalculate any required fields, based on the new data
     const page = state.pages[pageKey];
     const formData = initialState.data;
-
+    
+    console.log("******Initial State recalculate ********", initialState);
     const { data, schema } = updateSchemaAndData(
       page.schema,
       page.uiSchema,
@@ -621,6 +622,7 @@ export function recalculateSchemaAndData(initialState) {
 }
 
 export function createInitialState(formConfig) {
+  console.log("createInitialState ****** ");
   let initialState = {
     submission: {
       status: false,
@@ -640,7 +642,7 @@ export function createInitialState(formConfig) {
     },
     trackingPrefix: formConfig.trackingPrefix,
   };
-
+  console.log("initialState ****** ",initialState);
   const pageAndDataState = createFormPageList(formConfig).reduce(
     (state, page) => {
       const definitions = _.assign(
