@@ -11,6 +11,8 @@ import {createRoutesWithSaveInProgress} from './platform/forms/save-in-progress/
 //import startApp  from './platform/startup';
 import {createSaveInProgressFormReducer}  from './platform/forms/save-in-progress/reducers';
 
+import reducers from 'platform/forms-system/src/js/state/reducers';
+
 import { FormPage } from './platform/forms-system/src/js/containers/FormPage';
 
 export default {
@@ -23,6 +25,7 @@ export default {
   FormNav,
   FormPage,
   createRoutesWithSaveInProgress,
+  reducers,
   //startApp,
   createSaveInProgressFormReducer
 };

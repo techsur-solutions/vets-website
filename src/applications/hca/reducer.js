@@ -113,6 +113,6 @@ export function hcaEnrollmentStatus(state = initialState, action) {
 }
 
 export default {
-  form: createSaveInProgressFormReducer(formConfig),
+  form: createSaveInProgressFormReducer(formConfig,""),
   hcaEnrollmentStatus,
 };
