@@ -1,12 +1,12 @@
-// import PropTypes from 'prop-types';
-// import React from 'react';
+//import PropTypes from 'prop-types';
+import React from 'react';
 // import { connect } from 'react-redux';
 // import { withRouter } from 'react-router';
 
 // import { FormPage } from 'platform/forms-system/src/js/containers/FormPage';
 // import { setData, uploadFile } from 'platform/forms-system/src/js/actions';
 
-// import debounce from '../../utilities/data/debounce';
+//import debounce from '../../utilities/data/debounce';
 
 // import SaveFormLink from './SaveFormLink';
 // import SaveStatus from './SaveStatus';
@@ -18,12 +18,12 @@
 // import { getFormContext } from './selectors';
 // import { toggleLoginModal } from '../../site-wide/user-nav/actions';
 // import { FINISH_APP_LATER_DEFAULT_MESSAGE } from '../../forms-system/src/js/constants';
-// import '../../../applications/proxy-rewrite/sass/style-consolidated.scss';
+import '../../../applications/proxy-rewrite/sass/style-consolidated.scss';
 class RoutedSavablePage extends React.Component {
   constructor(props) {
     console.log("ROuted Savable Page ********");
     super(props);
-    this.debouncedAutoSave = debounce(1000, this.autoSave);
+    //this.debouncedAutoSave = debounce(1000, this.autoSave);
   }
 
   // onChange = formData => {
