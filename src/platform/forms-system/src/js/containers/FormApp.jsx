@@ -100,7 +100,8 @@ class FormApp extends React.Component {
           <div className="usa-width-two-thirds medium-8 columns">
             <Element name="topScrollElement" />
             {formTitle}
-            {formNav}
+          {formNav}
+          {console.log(formNav)}
             {renderedChildren}
           </div>
         </div>

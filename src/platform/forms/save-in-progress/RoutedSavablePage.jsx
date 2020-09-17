@@ -21,6 +21,7 @@ import { FINISH_APP_LATER_DEFAULT_MESSAGE } from '../../forms-system/src/js/cons
 import '../../../applications/proxy-rewrite/sass/style-consolidated.scss';
 class RoutedSavablePage extends React.Component {
   constructor(props) {
+    console.log("ROuted Savable Page ********");
     super(props);
     this.debouncedAutoSave = debounce(1000, this.autoSave);
   }
@@ -43,6 +44,8 @@ class RoutedSavablePage extends React.Component {
 
   render() {
     const { user, form, formConfig, route } = this.props;
+    console.log("ROuted Savable Page ******** route ",route);
+    console.log("ROuted Savable Page ******** formConfig ",formConfig);
     const finishAppLaterMessage =
       formConfig?.customText?.finishAppLaterMessage ||
       FINISH_APP_LATER_DEFAULT_MESSAGE;

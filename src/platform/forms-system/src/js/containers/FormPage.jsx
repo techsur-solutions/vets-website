@@ -35,6 +35,7 @@ const scrollToTop = () => {
 
 class FormPage extends React.Component {
   componentDidMount() {
+    console.log("FormPage ******** ");
     if (!this.props.blockScrollOnMount) {
       scrollToTop();
       focusForm();
