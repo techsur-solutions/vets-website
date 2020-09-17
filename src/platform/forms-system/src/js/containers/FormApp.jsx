@@ -17,7 +17,10 @@ const Element = Scroll.Element;
 class FormApp extends React.Component {
   /* eslint-disable-next-line camelcase */
   UNSAFE_componentWillMount() {
+    console.log("in form App ********  UNSAFE_componentWillMount  ");
+    
     const { additionalRoutes } = this.props.formConfig;
+    console.log("in form App ********  UNSAFE_componentWillMount additionalRoutes ",additionalRoutes);
     this.nonFormPages = [];
     if (additionalRoutes) {
       this.nonFormPages = additionalRoutes.map(route => route.path);
