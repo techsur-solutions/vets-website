@@ -40,7 +40,7 @@ export default function startApp({
     reducer,
     analyticsEvents,
   });
-
+  console.log("in startApp  *******  ",url);
   let history = browserHistory;
   if (url) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
