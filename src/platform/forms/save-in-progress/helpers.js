@@ -43,11 +43,14 @@ export function createRoutesWithSaveInProgress(formConfig) {
     //   newRoutes[index] = newRoute;
     // }
 
-    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ") ;
-    newRoute = Object.assign({}, route, {
-      component: RoutedSavablePage,
-      formConfig,
-    });
+    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ",route) ;
+    // newRoute = Object.assign({}, route, {
+    //   component: RoutedSavablePage,
+    //   formConfig,
+    // });
+
+    newRoute = <RoutedSavablePage route={route} formConfig={formConfig}/>
+    
     newRoutes[index] = newRoute;
 
     // rewrite review page component
