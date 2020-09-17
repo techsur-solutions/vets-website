@@ -8,7 +8,7 @@ import { RoutedSavableReviewPage } from './platform/forms/save-in-progress/Route
 import { formConfig } from './applications/hca/config/form';
 import { FormNav } from './platform/forms-system/src/js/components/FormNav';
 import {createRoutesWithSaveInProgress} from './platform/forms/save-in-progress/helpers';
-//import startApp  from './platform/startup';
+import {startApp}  from './platform/startup';
 import {createSaveInProgressFormReducer}  from './platform/forms/save-in-progress/reducers';
 
 import reducers from 'platform/forms-system/src/js/state/reducers';
@@ -26,6 +26,6 @@ export default {
   FormPage,
   createRoutesWithSaveInProgress,
   reducers,
-  //startApp,
+  startApp,
   createSaveInProgressFormReducer
 };
