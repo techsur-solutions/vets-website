@@ -50,7 +50,7 @@ export function createRoutesWithSaveInProgress(formConfig) {
     // });
 
     newRoute = <RoutedSavablePage route={route} formConfig={formConfig}/>
-    
+    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoute *** ",newRoute) ;
     newRoutes[index] = newRoute;
 
     // rewrite review page component
