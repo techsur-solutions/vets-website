@@ -43,14 +43,14 @@ export function createRoutesWithSaveInProgress(formConfig) {
     //   newRoutes[index] = newRoute;
     // }
 
-    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage RoutedSavablePage *** ",RoutedSavablePage+"    ****   ",route) ;
-   
+    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ",newRoutes) ;
+    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage RoutedSavablePage *** ",RoutedSavablePage) ;
     newRoute = Object.assign({}, route, {
       component: RoutedSavablePage,
       formConfig,
     });
     newRoutes[index] = newRoute;
-    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ",newRoutes) ;
+
     // rewrite review page component
     // if (route.path === 'review-and-submit') {
     //   console.log("25 *****createRoutesWithSaveInProgress RoutedSavableReviewPage newRoutes *** ",newRoutes);
@@ -81,7 +81,7 @@ export function createRoutesWithSaveInProgress(formConfig) {
   //     pageList,
   //     formConfig,
   //   });
-  }
+  // }
 
   console.log("76 *****createRoutesWithSaveInProgress newRoutes *** ",newRoutes) ;
   return newRoutes;
