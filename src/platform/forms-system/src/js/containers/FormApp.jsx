@@ -121,4 +121,4 @@ class FormApp extends React.Component {
 
 // export default connect(mapStateToProps)(FormApp);
 
-export { FormApp };
+export default FormApp;
