@@ -11,13 +11,10 @@ import ENVIRONMENT_CONFIGURATIONS from 'site/constants/environments-configs';
 // be the only reference to this value throughout our client-side code. Other modules should
 // instead import this module and interface with it instead.
 console.log("in environments   ******* ");
-const BUILDTYPE = __BUILDTYPE__;
+const BUILDTYPE = ENVIRONMENTS.LOCALHOST;
 
-const environment = ENVIRONMENT_CONFIGURATIONS[ENVIRONMENTS.LOCALHOST];
+const environment = ENVIRONMENT_CONFIGURATIONS[BUILDTYPE];
 console.log("in environments  environment  ******* ",environment);
-
-const environment = ENVIRONMENT_CONFIGURATIONS[LOCALHOST];
-console.log("in environments  environment local  ******* ",environment);
 const isPort80 = location.port === '' || location.port === 80;
 
 if (!isPort80) {
