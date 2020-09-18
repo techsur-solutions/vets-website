@@ -13,10 +13,15 @@ import ENVIRONMENT_CONFIGURATIONS from 'site/constants/environments-configs';
 console.log("in environments   ******* ");
 const BUILDTYPE = __BUILDTYPE__;
 
-const environment = ENVIRONMENT_CONFIGURATIONS[BUILDTYPE];
+const environment = ENVIRONMENT_CONFIGURATIONS[ENVIRONMENTS.LOCALHOST];
+console.log("in environments  environment  ******* ",environment);
+
+const environment = ENVIRONMENT_CONFIGURATIONS[LOCALHOST];
+console.log("in environments  environment local  ******* ",environment);
 const isPort80 = location.port === '' || location.port === 80;
 
 if (!isPort80) {
+  console.log("in environments  environment  *******isPort80 *** ");
   // It's possible that we're executing a certain build-type under a hostname
   // other than the host that it's configured. This is the case for integration tests,
   // where we're testing the vagovprod (production) build-type by serving the production-compiled files,

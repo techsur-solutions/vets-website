@@ -32,11 +32,7 @@ module.exports = {
 
   [ENVIRONMENTS.LOCALHOST]: {
     BUILDTYPE: ENVIRONMENTS.LOCALHOST,
-    BASE_URL: true
-      ? 'https://localhost:3000'
-      : `http://${location.hostname || 'localhost'}:${
-          location.port ? location.port : '3001'
-        }`,
+    BASE_URL:'http://localhost:3000',
     API_URL: true
       ? 'http://localhost:3000'
       : `http://${location.hostname || 'localhost'}:3000`,
