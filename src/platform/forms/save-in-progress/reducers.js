@@ -136,9 +136,9 @@ export function createSaveInProgressInitialState(formConfig, initialState) {
   });
 }
 
-export function createSaveInProgressFormReducer(formConfig,reducer) {
+export function createSaveInProgressFormReducer(formConfig) {
   console.log("createSaveInProgressFormReducer **** ",formConfig);
-  console.log("createSaveInProgressFormReducer ****reducer  ",reducer);
+  //console.log("createSaveInProgressFormReducer ****reducer  ",reducer);
   let formReducers = reducers;
   console.log("createSaveInProgressFormReducer ****formReducers ",formReducers);
   let initialState = createInitialState(formConfig);

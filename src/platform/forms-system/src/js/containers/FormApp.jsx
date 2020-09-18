@@ -1,7 +1,5 @@
 import React from 'react';
-
-//import { withRouter } from 'react-router';
-//import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import Scroll from 'react-scroll';
 
 import FormNav from '../components/FormNav';
@@ -116,10 +114,10 @@ class FormApp extends React.Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   formData: state.form.data,
-// });
+const mapStateToProps = state => ({
+  formData: state.form.data,
+});
 
-// export default connect(mapStateToProps)(FormApp);
+export default connect(mapStateToProps)(FormApp);
 
-export default FormApp;
+//export default FormApp;

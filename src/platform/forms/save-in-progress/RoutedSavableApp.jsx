@@ -231,8 +231,7 @@ class RoutedSavableApp extends React.Component {
   };
 
   render() {
-    const { currentLocation, formConfig, children, formData } = this.props;
-    console.log("RoutedSavableApp ******* formData     ",formData);
+    const { currentLocation, formConfig, children} = this.props;
     console.log("RoutedSavableApp ******* formConfig      ",formConfig);
     console.log("RoutedSavableApp ******* children         ",children);
     console.log("RoutedSavableApp ******* currentLocation    ",currentLocation);
