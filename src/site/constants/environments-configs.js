@@ -10,6 +10,7 @@ if (typeof window === 'undefined') {
   isNode = true;
 }
 
+console.log("environment configs *********");
 module.exports = {
   [ENVIRONMENTS.VAGOVPROD]: {
     BUILDTYPE: ENVIRONMENTS.VAGOVPROD,

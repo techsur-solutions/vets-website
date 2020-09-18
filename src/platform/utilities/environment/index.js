@@ -10,6 +10,7 @@ import ENVIRONMENT_CONFIGURATIONS from 'site/constants/environments-configs';
 // to indicate the name of our current environment as passed from our build script. This should
 // be the only reference to this value throughout our client-side code. Other modules should
 // instead import this module and interface with it instead.
+console.log("in environments   ******* ");
 const BUILDTYPE = __BUILDTYPE__;
 
 const environment = ENVIRONMENT_CONFIGURATIONS[BUILDTYPE];
