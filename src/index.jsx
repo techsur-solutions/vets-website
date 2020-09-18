@@ -25,5 +25,6 @@ export default {
   FormPage,
   createRoutesWithSaveInProgress,
   startApp,
-  createSaveInProgressFormReducer
+  createSaveInProgressFormReducer,
+  callRoutedApp
 };
