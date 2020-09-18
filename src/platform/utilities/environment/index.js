@@ -27,6 +27,7 @@ if (!isPort80) {
   const LOCALHOST_ENV = ENVIRONMENT_CONFIGURATIONS[ENVIRONMENTS.LOCALHOST];
   environment.API_URL = LOCALHOST_ENV.API_URL;
   environment.BASE_URL = "http://localhost:3000/";
+  console.log("in environments  environment  *******isPort80 *** ");
 }
 
 if (environment.BUILDTYPE === ENVIRONMENTS.LOCALHOST) {
