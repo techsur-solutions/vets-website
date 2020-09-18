@@ -33,57 +33,50 @@ export function createRoutesWithSaveInProgress(formConfig) {
   newRoutes.forEach((route, index) => {
     let newRoute;
 
-    // rewrite page component
-    // if (!protectedRoutes.has(route.path)) {
-    //   console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ",newRoutes) ;
-    //   newRoute = Object.assign({}, route, {
-    //     component: RoutedSavablePage,
-    //     formConfig,
-    //   });
-    //   newRoutes[index] = newRoute;
-    // }
+    //rewrite page component
+    if (!protectedRoutes.has(route.path)) {
+      newRoute = Object.assign({}, route, {
+        component: RoutedSavablePage,
+        formConfig,
+      });
+      newRoutes[index] = newRoute;
+      console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoute *** ",newRoute) ;
+    }
 
     
-    newRoute = Object.assign({}, route, {
-      component: RoutedSavablePage,
-      formConfig,
-    });
-    newRoutes[index] = newRoute;
-    console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoutes *** ",route);
-
-    
-    // rewrite review page component
-    // if (route.path === 'review-and-submit') {
-    //   console.log("25 *****createRoutesWithSaveInProgress RoutedSavableReviewPage newRoutes *** ",newRoutes);
-    //   newRoute = Object.assign({}, route, {
-    //     component: RoutedSavableReviewPage,
-    //   });
-    //   newRoutes[index] = newRoute;
-    // }
+   // rewrite review page component
+    if (route.path === 'review-and-submit') {
+     
+      newRoute = Object.assign({}, route, {
+        component: RoutedSavableReviewPage,
+      });
+      newRoutes[index] = newRoute;
+      console.log("25 *****createRoutesWithSaveInProgress RoutedSavableReviewPage newRoute *** ",newRoute);
+    }
   });
 
-  // if (!formConfig.disableSave) {
-  //   newRoutes.splice(newRoutes.length - 1, 0, {
-  //     path: 'form-saved',
-  //     component: formConfig.formSavedPage || FormSaved,
-  //     pageList,
-  //     formConfig,
-  //   });
+  if (!formConfig.disableSave) {
+    newRoutes.splice(newRoutes.length - 1, 0, {
+      path: 'form-saved',
+      component: formConfig.formSavedPage || FormSaved,
+      pageList,
+      formConfig,
+    });
 
-  //   newRoutes.splice(newRoutes.length - 1, 0, {
-  //     path: 'error',
-  //     component: SaveInProgressErrorPage,
-  //     pageList, // In case we need it for startOver?
-  //     formConfig,
-  //   });
+    newRoutes.splice(newRoutes.length - 1, 0, {
+      path: 'error',
+      component: SaveInProgressErrorPage,
+      pageList, // In case we need it for startOver?
+      formConfig,
+    });
 
-  //   newRoutes.splice(newRoutes.length - 1, 0, {
-  //     path: 'resume',
-  //     pageList,
-  //     formConfig,
-  //   });
-  // }
+    newRoutes.splice(newRoutes.length - 1, 0, {
+      path: 'resume',
+      pageList,
+      formConfig,
+    });
+  }
 
-  //console.log("76 *****createRoutesWithSaveInProgress newRoutes *** ",newRoutes) ;
+  console.log("76 *****createRoutesWithSaveInProgress newRoutes *** ",newRoutes) ;
   return newRoutes;
 }

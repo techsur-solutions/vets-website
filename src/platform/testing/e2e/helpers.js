@@ -2,8 +2,7 @@ const Timeouts = require('./timeouts');
 const Path = require('path');
 const FindRoot = require('find-root');
 
-const BASE_URL = `http://${process.env.WEB_HOST || 'localhost'}:${process.env
-  .WEB_PORT || 3333}`;
+const BASE_URL = "http://localhost:3000/";
 
 const API_URL = `http://${process.env.API_HOST || 'localhost'}:${process.env
   .API_PORT || 3000}`;
