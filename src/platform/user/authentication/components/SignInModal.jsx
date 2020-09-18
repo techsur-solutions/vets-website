@@ -15,7 +15,9 @@ import { login, signup } from 'platform/user/authentication/utilities';
 import { formatDowntime } from 'platform/utilities/date';
 import environment from 'platform/utilities/environment';
 
+console.log("vaGovFullDomain   ***** ");
 const vaGovFullDomain = environment.BASE_URL;
+console.log("vaGovFullDomain   ***** ");
 const logoSrc = `${vaGovFullDomain}/img/design/logo/va-logo.png`;
 
 export class SignInModal extends React.Component {

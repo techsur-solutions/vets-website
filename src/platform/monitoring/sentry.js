@@ -7,8 +7,9 @@ import * as Sentry from '@sentry/browser';
 import environment from '../utilities/environment';
 
 // url check is necessary for e2e tests and local environments
+console.log("trackErrors   ***** ");
 const trackErrors = environment.BASE_URL.indexOf('localhost') < 0;
-
+console.log("trackErrors   ***** ");
 // if (trackErrors) {
 //   const url = `${environment.BASE_URL}/js-report/0`.replace('//', '//faker@');
 //   Sentry.init({

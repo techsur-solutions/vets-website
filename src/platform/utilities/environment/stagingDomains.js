@@ -2,11 +2,12 @@ import { mhvBaseUrl } from '../../site-wide/mhv/utilities';
 import environment from '.';
 
 // This list also exists in script/options.js
+console.log("domainReplacements   ***** ");
 const domainReplacements = [
   { from: 'https://www\\.va\\.gov', to: environment.BASE_URL },
   { from: 'https://www\\.myhealth\\.va\\.gov', to: mhvBaseUrl() },
 ];
-
+console.log("domainReplacements   ***** ");
 export function replaceWithStagingDomain(href) {
   let newHref = href;
   domainReplacements.forEach(domain => {

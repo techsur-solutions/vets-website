@@ -17,8 +17,10 @@ export default function redirectIfNecessary(currentWindow) {
 
   if (matchedRedirect) {
     // eslint-disable-next-line no-param-reassign
+    console.log("matchedRedirect   ***** ");
     currentWindow.location.href = `${environment.BASE_URL}${
       matchedRedirect.dest
     }`;
+    console.log("matchedRedirect  end ***** ");
   }
 }
