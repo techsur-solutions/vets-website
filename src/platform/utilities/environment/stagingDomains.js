@@ -4,7 +4,7 @@ import environment from '.';
 // This list also exists in script/options.js
 console.log("domainReplacements   ***** ");
 const domainReplacements = [
-  { from: 'https://www\\.va\\.gov', to: environment.BASE_URL },
+  { from: 'https://www\\.va\\.gov', to: "http://localhost:3000/" },
   { from: 'https://www\\.myhealth\\.va\\.gov', to: mhvBaseUrl() },
 ];
 console.log("domainReplacements   ***** ");
