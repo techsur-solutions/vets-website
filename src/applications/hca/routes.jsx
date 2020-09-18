@@ -1,7 +1,7 @@
 import { createRoutesWithSaveInProgress } from 'platform/forms/save-in-progress/helpers';
 
 //import formConfig from './config/form';
-import HealthCareApp from './HealthCareApp.jsx';
+import {HealthCareEntry} from './HealthCareApp.jsx';
 
 // const routes = {
 //   path: '/',
@@ -15,13 +15,14 @@ import HealthCareApp from './HealthCareApp.jsx';
 const callRoutedApp = (formConfig)=>{
   console.log("formConfig  ******* ",formConfig);
   console.log("   ******************   ",createRoutesWithSaveInProgress(formConfig));
-const routes = {
-  path: '/',
-  component: HealthCareApp,
-  indexRoute:"veteran-chap1/veteranInfo",
-  childRoutes: createRoutesWithSaveInProgress(formConfig),
-  form: formConfig
-};
+ HealthCareEntry("veteran-chap1/veteranInfo",createRoutesWithSaveInProgress(formConfig),formConfig);
+// const routes = {
+//   path: '/',
+//   component: HealthCareApp,
+//   indexRoute:,
+//   childRoutes: ,
+//   form: formConfig
+// };
 }
 
 
