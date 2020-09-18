@@ -12,7 +12,7 @@ import {HealthCareEntry} from './HealthCareApp.jsx';
 //   childRoutes: createRoutesWithSaveInProgress(formConfig),
 // };
 
-const callRoutedApp = (formConfig)=>{
+export function callRoutedApp(formConfig){
   console.log("formConfig  ******* ",formConfig);
   console.log("   ******************   ",createRoutesWithSaveInProgress(formConfig));
  HealthCareEntry("veteran-chap1/veteranInfo",createRoutesWithSaveInProgress(formConfig),formConfig);
@@ -25,6 +25,3 @@ const callRoutedApp = (formConfig)=>{
 // };
 }
 
-
-
-export default callRoutedApp;
