@@ -25,7 +25,6 @@ export default class FormNav extends React.Component {
     console.log("FormNav  *********  formConfig  ****** ",formConfig);
     console.log("FormNav  *********  currentPath  ****** ",currentPath);
     console.log("FormNav  *********  formData  ****** ",formData);
-    currentPath = "veteran-chap1/veteranInfo";
     // This is converting the config into a list of pages with chapter keys,
     // finding the current page, then getting the chapter name using the key
     const formPages = createFormPageList(formConfig);
@@ -43,7 +42,9 @@ export default class FormNav extends React.Component {
     console.log("FormNav  *********  chapters  ****** ",chapters);
 
 
-    let page = eligiblePageList.filter(p => p.path === currentPath)[0];
+    //let page = eligiblePageList.filter(p => p.path === currentPath)[0];   actual condition
+
+    let page = eligiblePageList[0];
 
     console.log("FormNav  *********  page  ****** ", page);
     // If the page isn’t active, it won’t be in the eligiblePageList
