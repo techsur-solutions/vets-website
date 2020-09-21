@@ -106,10 +106,10 @@ function mountReactComponents(headerFooterData, commonStore) {
     crisisModal.parentNode.removeChild(crisisModal);
   }
 
-  // New navigation menu
-  if (document.querySelector('#vetnav')) {
-    require('../../platform/site-wide/legacy/mega-menu.js');
-  }
+  // // New navigation menu
+  // if (document.querySelector('#vetnav')) {
+  //   require('../../platform/site-wide/legacy/mega-menu.js');
+  // }
 
   // set up sizes for rem
   document.documentElement.style.fontSize = '10px';

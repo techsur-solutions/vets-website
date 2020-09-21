@@ -26,9 +26,9 @@ import '@department-of-veterans-affairs/formation/dist/formation';
  */
 export default function startSitewideComponents(commonStore) {
   // New navigation menu
-  if (document.querySelector('#vetnav')) {
-    require('./legacy/mega-menu.js');
-  }
+  // if (document.querySelector('#vetnav')) {
+  //   require('./legacy/mega-menu.js');
+  // }
 
   // Prevent some browsers from changing the value when scrolling while hovering
   //  over an input[type="number"] with focus.
@@ -45,12 +45,12 @@ export default function startSitewideComponents(commonStore) {
 
   startUserNavWidget(commonStore);
   startAnnouncementWidget(commonStore);
-  startMegaMenuWidget(window.VetsGov.headerFooter.megaMenuData, commonStore);
+  //startMegaMenuWidget(window.VetsGov.headerFooter.megaMenuData, commonStore);
   startSideNav(window.sideNav, commonStore);
   startBanners();
   startMobileMenuButton(commonStore);
-  startVAFooter(
-    window.VetsGov.headerFooter.footerData,
-    addFocusBehaviorToCrisisLineModal,
-  );
+  // startVAFooter(
+  //   window.VetsGov.headerFooter.footerData,
+  //   addFocusBehaviorToCrisisLineModal,
+  // );
 }

@@ -77,6 +77,7 @@ export default class FormNav extends React.Component {
     console.log("FormNav current *********** ",current);
     return (
       <div>
+        {console.log("inside return ******* ",chapters.length)}
         <SegmentedProgressBar total={chapters.length} current={current} />
         <div className="schemaform-chapter-progress">
           <div
