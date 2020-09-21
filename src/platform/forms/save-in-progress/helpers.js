@@ -9,6 +9,7 @@ import FormSaved from './FormSaved';
 import SaveInProgressErrorPage from './SaveInProgressErrorPage';
 
 export function createRoutesWithSaveInProgress(formConfig) {
+  console.log("*****createRoutesWithSaveInProgress *** ") ;
   const protectedRoutes = new Set([
     'introduction',
     'review-and-submit',
