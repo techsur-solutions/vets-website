@@ -174,6 +174,8 @@ class RoutedSavableApp extends React.Component {
   };
 
   getFirstNonIntroPagePath(props) {
+    console.log(" *****getFirstNonIntroPagePath ");
+    console.log(" *****getFirstNonIntroPagePath ",props.routes);
     return getNextPagePath(
       props.routes[props.routes.length - 1].pageList,
       props.formData,
@@ -185,7 +187,8 @@ class RoutedSavableApp extends React.Component {
     // Stop a user that's been redirected from being redirected again after
     // logging in
     this.shouldRedirectOrLoad = false;
-
+    console.log(" redirectOrLoad ***** ");
+console.log(" redirectOrLoad ***** ",props.routes);
     const firstPagePath =
       props.routes[props.routes.length - 1].pageList[0].path;
     const firstNonIntroPagePath = this.getFirstNonIntroPagePath(props);
