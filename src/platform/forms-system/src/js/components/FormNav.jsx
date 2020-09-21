@@ -80,6 +80,7 @@ export default class FormNav extends React.Component {
         {console.log("inside return ******* ",chapters.length)}
         <SegmentedProgressBar total={chapters.length} current={current} />
         <div className="schemaform-chapter-progress">
+        {console.log("inside return ******* schemaform")}
           <div
             aria-valuenow={current}
             aria-valuemin="1"
@@ -89,6 +90,7 @@ export default class FormNav extends React.Component {
             aria-valuemax={chapters.length}
             className="nav-header nav-header-schemaform"
           >
+             {console.log("inside return ******* schemaform 93")}
             {!environment.isProduction() ? (
               <h2 className="vads-u-font-size--h4">
                 {`Step ${current} of ${chapters.length}: ${chapterName}`}
@@ -99,7 +101,9 @@ export default class FormNav extends React.Component {
                 <span className="form-process-total">of {chapters.length}</span>{' '}
                 {chapterName}
               </h2>
+              
             )}
+             {console.log("inside return ******* schemaform 106")}
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ import  startApp  from './platform/startup';
 import {createSaveInProgressFormReducer}  from './platform/forms/save-in-progress/reducers';
 
 import { FormPage } from './platform/forms-system/src/js/containers/FormPage';
-import {callRoutedApp} from './applications/hca/routes';
+//import {callRoutedApp} from './applications/hca/routes';
 
 export default {
   RoutedSavablePage,
@@ -26,5 +26,5 @@ export default {
   createRoutesWithSaveInProgress,
   startApp,
   createSaveInProgressFormReducer,
-  callRoutedApp
+  //callRoutedApp
 };
