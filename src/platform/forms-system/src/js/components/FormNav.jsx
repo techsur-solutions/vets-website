@@ -37,14 +37,10 @@ export default class FormNav extends React.Component {
     console.log("FormNav  *********  eligiblePageList  ****** ", eligiblePageList);
 
     const chapters = _.uniq(
-      eligiblePageList.map(p => p.chapterKey).filter(key => {
-        //!!key;
-      console.log("key in uniq *****",key);
-      console.log("key in uniq *****",!!key);
-      return !!key;
-      }),
+      eligiblePageList.map(p => p.chapterKey).filter(key => !!key),
     );
-    console.log("FormNav  *********  chapters  ****** ", chapters);
+
+    console.log("FormNav  *********  chapters  ****** ");
 
 
     let page = eligiblePageList.filter(p => p.path === currentPath)[0];
