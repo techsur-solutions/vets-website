@@ -245,7 +245,7 @@ class RoutedSavableApp extends React.Component {
 
         console.log("FormApp comp **** ",FormApp);
         content = (
-          <FormApp formConfig={formConfig} currentLocation={currentLocation} formData={formData}>
+          <FormApp formConfig={formConfig} currentLocation={currentLocation}>
             {children}
           </FormApp>
         );

@@ -42,7 +42,7 @@ class FormApp extends React.Component {
     const lastPathComponent = currentLocation.pathname.split('/').pop();
     const isIntroductionPage = trimmedPathname.endsWith('introduction');
     const isNonFormPage = this.nonFormPages.includes(lastPathComponent);
-    const Footer = formConfig.footerContent;
+    //const Footer = formConfig.footerContent;
     const title = 
       typeof formConfig.title === 'function'
         ? formConfig.title(this.props)
@@ -85,12 +85,12 @@ class FormApp extends React.Component {
       );
     }
 
-    let footer;
-    if (Footer && !isNonFormPage) {
-      footer = (
-        <Footer formConfig={formConfig} currentLocation={currentLocation} />
-      );
-    }
+    // let footer;
+    // if (Footer && !isNonFormPage) {
+    //   footer = (
+    //     <Footer formConfig={formConfig} currentLocation={currentLocation} />
+    //   );
+    // }
 
     return (
       <div>
@@ -103,7 +103,7 @@ class FormApp extends React.Component {
             {renderedChildren}
           </div>
         </div>
-        {footer}
+        {/* {footer} */}
         <span
           className="js-test-location hidden"
           data-location={trimmedPathname}
