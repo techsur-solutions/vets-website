@@ -25,7 +25,7 @@ export default class FormNav extends React.Component {
     console.log("FormNav  *********  formConfig  ****** ",formConfig);
     console.log("FormNav  *********  currentPath  ****** ",currentPath);
     console.log("FormNav  *********  formData  ****** ",formData);
-
+    currentPath = "veteran-chap1/veteranInfo";
     // This is converting the config into a list of pages with chapter keys,
     // finding the current page, then getting the chapter name using the key
     const formPages = createFormPageList(formConfig);
