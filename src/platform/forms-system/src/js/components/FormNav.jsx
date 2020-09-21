@@ -72,10 +72,10 @@ export default class FormNav extends React.Component {
         chapterName = chapterName();
       }
     }
-    console.log("FormNav  *********  chapterName 73 ****** ", chapterName+" *******    "+chapters.length);
+    console.log("FormNav  *********  chapterName 73 ****** ", chapterName+" *******    "+typeof chapters.length);
+    console.log("FormNav  *********  chapterName 73 ****** ", chapterName+" *******    "+typeof chapters);
     console.log("FormNav current *********** ",current);
     return (
-      
       <div>
         <SegmentedProgressBar total={chapters.length} current={current} />
         <div className="schemaform-chapter-progress">

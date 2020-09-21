@@ -56,27 +56,27 @@ export function createRoutesWithSaveInProgress(formConfig) {
     }
   });
 
-  if (!formConfig.disableSave) {
-    newRoutes.splice(newRoutes.length - 1, 0, {
-      path: 'form-saved',
-      component: formConfig.formSavedPage || FormSaved,
-      pageList,
-      formConfig,
-    });
+  // if (!formConfig.disableSave) {
+  //   newRoutes.splice(newRoutes.length - 1, 0, {
+  //     path: 'form-saved',
+  //     component: formConfig.formSavedPage || FormSaved,
+  //     pageList,
+  //     formConfig,
+  //   });
 
-    newRoutes.splice(newRoutes.length - 1, 0, {
-      path: 'error',
-      component: SaveInProgressErrorPage,
-      pageList, // In case we need it for startOver?
-      formConfig,
-    });
+  //   newRoutes.splice(newRoutes.length - 1, 0, {
+  //     path: 'error',
+  //     component: SaveInProgressErrorPage,
+  //     pageList, // In case we need it for startOver?
+  //     formConfig,
+  //   });
 
-    newRoutes.splice(newRoutes.length - 1, 0, {
-      path: 'resume',
-      pageList,
-      formConfig,
-    });
-  }
+  //   newRoutes.splice(newRoutes.length - 1, 0, {
+  //     path: 'resume',
+  //     pageList,
+  //     formConfig,
+  //   });
+  // }
 
   console.log("76 *****createRoutesWithSaveInProgress newRoutes *** ",newRoutes) ;
   return newRoutes;
