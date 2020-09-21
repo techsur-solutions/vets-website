@@ -41,6 +41,7 @@ export default function startReactApp(component, root = null) {
     mountElement = document.getElementById('react-root');
   }
 
+  console.log(" startReactApp *******  ",component);
   if (document.readyState !== 'loading') {
     ReactDOM.render(component, mountElement);
   } else {
