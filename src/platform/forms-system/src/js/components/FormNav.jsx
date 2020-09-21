@@ -40,7 +40,7 @@ export default class FormNav extends React.Component {
       eligiblePageList.map(p => p.chapterKey).filter(key => !!key),
     );
 
-    console.log("FormNav  *********  chapters  ****** ");
+    console.log("FormNav  *********  chapters  ****** ",chapters);
 
 
     let page = eligiblePageList.filter(p => p.path === currentPath)[0];
