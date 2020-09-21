@@ -68,7 +68,7 @@ def runDeploy(String jobName, String ref, boolean waitForDeploy) {
 def buildDetails(String buildtype, String ref, Long buildtime) {
   return """\
 BUILDTYPE=${buildtype}
-NODE_ENV=production
+NODE_ENV=development
 BRANCH_NAME=${env.BRANCH_NAME}
 CHANGE_TARGET=${env.CHANGE_TARGET}
 BUILD_ID=${env.BUILD_ID}
