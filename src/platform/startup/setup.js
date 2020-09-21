@@ -22,24 +22,25 @@ export default function setUpCommonFunctionality({
   url,
 }) {
   // Set further errors to have the appropriate source tag
-  Sentry.setTag('source', entryName);
+  //Sentry.setTag('source', entryName);
 
   // Set the app name for use in the apiRequest helper
-  window.appName = entryName;
-
+  //window.appName = entryName;
+console.log("setUpCommonFunctionality ******* ");
   const store = createCommonStore(reducer, analyticsEvents);
-  connectFeatureToggle(store.dispatch);
+  console.log("setUpCommonFunctionality ******* ");
+ // connectFeatureToggle(store.dispatch);
 
-  if (url?.endsWith('/')) {
-    throw new Error(
-      'Root urls should not end with a slash. Check your manifest.json file and application entry file.',
-    );
-  }
+  // if (url?.endsWith('/')) {
+  //   throw new Error(
+  //     'Root urls should not end with a slash. Check your manifest.json file and application entry file.',
+  //   );
+  // }
 
-  Sentry.withScope(scope => {
-    scope.setTag('source', 'site-wide');
-    startSitewideComponents(store);
-  });
+  // Sentry.withScope(scope => {
+  //   scope.setTag('source', 'site-wide');
+  //   startSitewideComponents(store);
+  // });
 
   return store;
 }

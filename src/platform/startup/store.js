@@ -52,9 +52,11 @@ export default function createCommonStore(
     ...appReducer,
     ...commonReducer,
   };
+
+  console.log("createCommonStore ******* ");
   const useDevTools =
     !environment.isProduction() && window.__REDUX_DEVTOOLS_EXTENSION__;
-
+    console.log("createCommonStore ******* ");
   const store = createStore(
     combineReducers(reducer),
     compose(
@@ -64,7 +66,7 @@ export default function createCommonStore(
   );
 
   store.reducerMap = reducer;
-
+  console.log("createCommonStore reducerMap******* ");
   store.injectReducer = (key, newReducer) => {
     store.reducerMap[key] = newReducer;
     store.replaceReducer(combineReducers(store.reducerMap));

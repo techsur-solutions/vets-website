@@ -34,31 +34,31 @@ export default function startApp({
   analyticsEvents,
   entryName = 'unknown',
 }) {
-  // const store = setUpCommonFunctionality({
-  //   entryName,
-  //   url,
-  //   reducer,
-  //   analyticsEvents,
-  // });
-  // console.log("in startApp  *******  ",url);
-  // let history = browserHistory;
-  // if (url) {
-  //   // eslint-disable-next-line react-hooks/rules-of-hooks
-  //   history = useRouterHistory(createHistory)({
-  //     basename: url,
-  //   });
-  // }
-  //let content = component;
-  // if (createRoutesWithStore) {
-  //   console.log("createRoutesWithStore *** ");
-  //   content = <Router history={history}>{createRoutesWithStore(store)}</Router>;
-  // } else if (routes) {
-  //   console.log("routes *** ");
-  //   content = <Router history={history}>{routes}</Router>;
-  // }
+  const store = setUpCommonFunctionality({
+    entryName,
+    url,
+    reducer,
+    analyticsEvents,
+  });
+  console.log("in startApp  *******  ",url);
+  let history = browserHistory;
+  if (url) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    history = useRouterHistory(createHistory)({
+      basename: url,
+    });
+  }
+  let content = component;
+  if (createRoutesWithStore) {
+    console.log("createRoutesWithStore *** ");
+    content = <Router history={history}>{createRoutesWithStore(store)}</Router>;
+  } else if (routes) {
+    console.log("routes *** ");
+    content = <Router history={history}>{routes}</Router>;
+  }
 
-  // //startReactApp(<Provider store={store}>{content}</Provider>);
-  // console.log("  routes  *****************    ",<Provider store={store}>{content}</Provider>);
-  // let providerCont = <Provider store={store}>{content}</Provider>;
-  return routes;
+  //startReactApp(<Provider store={store}>{content}</Provider>);
+  console.log("  routes  *****************    ",<Provider store={store}>{content}</Provider>);
+  let providerCont = <Provider store={store}>{content}</Provider>;
+  return providerCont;
 }

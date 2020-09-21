@@ -10,9 +10,9 @@ import environment from 'platform/utilities/environment';
 import headerPartial from './partials/header';
 import footerPartial from './partials/footer';
 
-import startUserNavWidget from 'platform/site-wide/user-nav';
-import startMegaMenuWidget from 'platform/site-wide/mega-menu';
-import startMobileMenuButton from 'platform/site-wide/mobile-menu-button';
+//import startUserNavWidget from 'platform/site-wide/user-nav';
+//import startMegaMenuWidget from 'platform/site-wide/mega-menu';
+//import startMobileMenuButton from 'platform/site-wide/mobile-menu-button';
 
 // import startLRNHealthCarWidget from 'platform/site-wide/left-rail-navs/health-care';
 // import startAnnouncementWidget from 'platform/site-wide/announcements';
@@ -115,12 +115,12 @@ function mountReactComponents(headerFooterData, commonStore) {
   document.documentElement.style.fontSize = '10px';
   document.getElementsByTagName('body')[0].style.fontSize = '12px';
 
-  startUserNavWidget(commonStore);
-  startMegaMenuWidget(headerFooterData.megaMenuData, commonStore);
-  startMobileMenuButton(commonStore);
+ // startUserNavWidget(commonStore);
+  //startMegaMenuWidget(headerFooterData.megaMenuData, commonStore);
+  //startMobileMenuButton(commonStore);
   // startLRNHealthCarWidget(commonStore);
   // startAnnouncementWidget(commonStore);
-  renderFooter(headerFooterData.footerData);
+  //renderFooter(headerFooterData.footerData);
 }
 
 // function getAssetHostName() {
