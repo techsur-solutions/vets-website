@@ -49,16 +49,19 @@ export default function startApp({
     });
   }
   let content = component;
+  console.log(" content in startApp ******** ",content);
+
   if (createRoutesWithStore) {
     console.log("createRoutesWithStore *** ");
     content = <Router history={history}>{createRoutesWithStore(store)}</Router>;
   } else if (routes) {
-    console.log("routes *** ");
+    console.log("routes *** ", routes);
     content = <Router history={history}>{routes}</Router>;
   }
+  console.log(" content with router ******** ",content);
 
   //startReactApp(<Provider store={store}>{content}</Provider>);
   console.log("  routes  *****************    ",<Provider store={store}>{content}</Provider>);
-  let providerCont = <Provider store={store}>{content}</Provider>;
+  const providerCont = <Provider store={store}>{content}</Provider>;
   return providerCont;
 }
