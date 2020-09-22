@@ -43,8 +43,8 @@ class RoutedSavablePage extends React.Component {
 
   render() {
     const { user, form, formConfig, route } = this.props;
-    console.log("ROuted Savable Page ******** route ",route);
-    console.log("ROuted Savable Page ******** formConfig ",route);
+    console.log('ROuted Savable Page ******** route ', route);
+    console.log('ROuted Savable Page ******** formConfig ', route);
     const finishAppLaterMessage =
       formConfig?.customText?.finishAppLaterMessage ||
       FINISH_APP_LATER_DEFAULT_MESSAGE;
@@ -133,4 +133,4 @@ export default withRouter(
   )(RoutedSavablePage),
 );
 
-export { RoutedSavablePage };
+// export { RoutedSavablePage };

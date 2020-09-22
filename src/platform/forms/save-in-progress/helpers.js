@@ -9,7 +9,7 @@ import FormSaved from './FormSaved';
 import SaveInProgressErrorPage from './SaveInProgressErrorPage';
 
 export function createRoutesWithSaveInProgress(formConfig) {
-  console.log("*****createRoutesWithSaveInProgress *** ") ;
+  console.log('*****createRoutesWithSaveInProgress *** ');
   const protectedRoutes = new Set([
     'introduction',
     'review-and-submit',
@@ -23,13 +23,18 @@ export function createRoutesWithSaveInProgress(formConfig) {
     });
   }
 
-  
   const formPages = createFormPageList(formConfig);
-  console.log("25 *****createRoutesWithSaveInProgress formPages *** ",formPages) ;
+  console.log(
+    '25 *****createRoutesWithSaveInProgress formPages *** ',
+    formPages,
+  );
   const pageList = createPageList(formConfig, formPages);
-  console.log("25 *****createRoutesWithSaveInProgress pageList *** ",pageList) ;
+  console.log('25 *****createRoutesWithSaveInProgress pageList *** ', pageList);
   const newRoutes = createRoutes(formConfig);
-  console.log("25 *****createRoutesWithSaveInProgress newRoutes *** ",newRoutes) ;
+  console.log(
+    '25 *****createRoutesWithSaveInProgress newRoutes *** ',
+    newRoutes,
+  );
 
   newRoutes.forEach((route, index) => {
     let newRoute;
@@ -41,18 +46,22 @@ export function createRoutesWithSaveInProgress(formConfig) {
         formConfig,
       });
       newRoutes[index] = newRoute;
-      console.log("25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoute *** ",newRoute) ;
+      console.log(
+        '25 *****createRoutesWithSaveInProgress RoutedSavablePage newRoute *** ',
+        newRoute,
+      );
     }
 
-    
-   // rewrite review page component
+    // rewrite review page component
     if (route.path === 'review-and-submit') {
-     
       newRoute = Object.assign({}, route, {
         component: RoutedSavableReviewPage,
       });
       newRoutes[index] = newRoute;
-      console.log("25 *****createRoutesWithSaveInProgress RoutedSavableReviewPage newRoute *** ",newRoute);
+      console.log(
+        '25 *****createRoutesWithSaveInProgress RoutedSavableReviewPage newRoute *** ',
+        newRoute,
+      );
     }
   });
 
@@ -78,6 +87,9 @@ export function createRoutesWithSaveInProgress(formConfig) {
   //   });
   // }
 
-  console.log("76 *****createRoutesWithSaveInProgress newRoutes *** ",newRoutes) ;
+  console.log(
+    '76 *****createRoutesWithSaveInProgress newRoutes *** ',
+    newRoutes,
+  );
   return newRoutes;
 }
