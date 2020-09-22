@@ -22,6 +22,7 @@ import '../../../applications/proxy-rewrite/sass/style-consolidated.scss';
 class RoutedSavablePage extends React.Component {
   constructor(props) {
     super(props);
+    console.log('THis props ----- in savable page ', this.props);
     this.debouncedAutoSave = debounce(1000, this.autoSave);
   }
 

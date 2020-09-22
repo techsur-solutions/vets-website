@@ -39,7 +39,7 @@ const scrollToTop = () => {
 class RoutedSavableApp extends React.Component {
   constructor(props) {
     super(props);
-    console.log('In side RoutedSavableApp');
+    console.log('In side RoutedSavableApp ++', this.props);
     this.location = props.location || window.location;
   }
   /* eslint-disable-next-line camelcase */
@@ -255,10 +255,7 @@ class RoutedSavableApp extends React.Component {
     console.log('FormApp comp **** ', FormApp);
     content = (
       <FormApp formConfig={formConfig} currentLocation={currentLocation}>
-        <RoutedSavablePage
-          formConfig={formConfig}
-          currentLocation={currentLocation}
-        />
+        <RoutedSavablePage {...this.props} />
       </FormApp>
     );
 
