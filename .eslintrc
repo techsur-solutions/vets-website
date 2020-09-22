@@ -40,12 +40,18 @@
   },
   "rules": {
     /* || Eslint main rules || */
-    "camelcase": [2, { "properties": "always" }], // Override airbnb style.
+    "camelcase": [2, {
+      "properties": "always"
+    }], // Override airbnb style.
     // "func-names": 2,
     "no-console": 0,
     "no-unused-vars": [
       2,
-      { "args": "after-used", "argsIgnorePattern": "^_", "vars": "local" }
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "vars": "local"
+      }
     ],
     "no-restricted-imports": ["error", "raven"],
     "prefer-rest-params": 2,
@@ -195,25 +201,32 @@
     "react/prop-types": 0, // TODO(awong): Enable.
     "react/sort-prop-types": [
       0,
-      { "callbacksLast": true, "requiredFirst": true }
+      {
+        "callbacksLast": true,
+        "requiredFirst": true
+      }
     ], // TODO(awong): Too hard to turn on.
     "react/forbid-prop-types": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-first-prop-new-line": 0,
     "react/jsx-indent-props": 0,
     "react/jsx-max-props-per-line": 0,
-    "react/jsx-no-bind": [0, { "ignoreRefs": true }], // TODO: Enable after fixing.
+    "react/jsx-no-bind": [0, {
+      "ignoreRefs": true
+    }], // TODO: Enable after fixing.
     "react/jsx-sort-props": [
       0,
-      { "callbacksLast": true, "shorthandFirst": true }
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true
+      }
     ], // TODO(awong): Too hard to turn on.
     "react/no-array-index-key": 0,
     "react/no-unescaped-entities": 0,
     "react/no-unused-prop-types": 0,
     "react/require-default-props": 0
   },
-  "overrides": [
-    {
+  "overrides": [{
       "files": [
         "src/platform/**/*.js",
         "src/platform/**/*.jsx",

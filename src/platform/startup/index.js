@@ -6,7 +6,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, useRouterHistory, browserHistory } from 'react-router';
 import { createHistory } from 'history';
-import startReactApp from './react';
+// import startReactApp from './react';
 import setUpCommonFunctionality from './setup';
 
 /**
@@ -40,7 +40,7 @@ export default function startApp({
     reducer,
     analyticsEvents,
   });
-  console.log("in startApp  *******  ",url);
+  console.log('in startApp  *******  ', url);
   let history = browserHistory;
   if (url) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -49,19 +49,21 @@ export default function startApp({
     });
   }
   let content = component;
-  console.log(" content in startApp ******** ",content);
+  console.log(' content in startApp ******** ', content);
 
   if (createRoutesWithStore) {
-    console.log("createRoutesWithStore *** ");
+    console.log('createRoutesWithStore *** ');
     content = <Router history={history}>{createRoutesWithStore(store)}</Router>;
   } else if (routes) {
-    console.log("routes *** ", routes);
+    console.log('routes *** ', routes);
     content = <Router history={history}>{routes}</Router>;
   }
-  console.log(" content with router ******** ",content);
+  console.log(' content with router ******** ', content);
 
-  //startReactApp(<Provider store={store}>{content}</Provider>);
-  console.log("  routes  *****************    ",<Provider store={store}>{content}</Provider>);
-  const providerCont = <Provider store={store}>{content}</Provider>;
-  return providerCont;
+  // startReactApp(<Provider store={store}>{content}</Provider>);
+  console.log(
+    '  routes  *****************    ',
+    <Provider store={store}>{content}</Provider>,
+  );
+  return <Provider store={store}>{content}</Provider>;
 }
