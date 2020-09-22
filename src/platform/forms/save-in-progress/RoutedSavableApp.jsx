@@ -13,11 +13,11 @@ import {
   setFetchFormStatus,
   fetchInProgressForm,
 } from './actions';
-import LoadingIndicator from '@department-of-veterans-affairs/formation-react/LoadingIndicator';
+// import LoadingIndicator from '@department-of-veterans-affairs/formation-react/LoadingIndicator';
 
 import { isInProgressPath } from '../helpers';
 import { getSaveInProgressState } from './selectors';
-import environment from 'platform/utilities/environment';
+// import environment from 'platform/utilities/environment';
 import { APP_TYPE_DEFAULT } from '../../forms-system/src/js/constants';
 
 const Element = Scroll.Element;
