@@ -2,7 +2,7 @@ import React from 'react';
 import Scroll from 'react-scroll';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-
+import RoutedSavablePage from './RoutedSavablePage';
 import FormApp from 'platform/forms-system/src/js/containers/FormApp';
 import { getNextPagePath } from 'platform/forms-system/src/js/routing';
 
@@ -255,7 +255,10 @@ class RoutedSavableApp extends React.Component {
     console.log('FormApp comp **** ', FormApp);
     content = (
       <FormApp formConfig={formConfig} currentLocation={currentLocation}>
-        {children}
+        <RoutedSavablePage
+          formConfig={formConfig}
+          currentLocation={currentLocation}
+        />
       </FormApp>
     );
 
