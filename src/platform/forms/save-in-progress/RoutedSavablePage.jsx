@@ -88,13 +88,13 @@ class RoutedSavablePage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   console.log('ownProps +++++++ ', ownProps.route);
-  const { appStateSelector } = ownProps.route.pageConfig;
+  // const { appStateSelector } = ownProps.route.pageConfig;
   return {
     form: state.form,
     user: state.user,
     showLoginModal: state.navigation.showLoginModal,
-    appStateData: null,
-    formConfig: ownProps.route.formConfig,
+    // appStateData: null,
+    // formConfig: ownProps.route.formConfig,
   };
 }
 
