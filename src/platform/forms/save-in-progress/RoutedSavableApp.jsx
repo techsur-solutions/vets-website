@@ -39,6 +39,7 @@ const scrollToTop = () => {
 class RoutedSavableApp extends React.Component {
   constructor(props) {
     super(props);
+    console.log('In side RoutedSavableApp');
     this.location = props.location || window.location;
   }
   /* eslint-disable-next-line camelcase */
@@ -174,8 +175,8 @@ class RoutedSavableApp extends React.Component {
   };
 
   getFirstNonIntroPagePath(props) {
-    console.log(" *****getFirstNonIntroPagePath ");
-    console.log(" *****getFirstNonIntroPagePath ",props.routes);
+    console.log(' *****getFirstNonIntroPagePath ');
+    console.log(' *****getFirstNonIntroPagePath ', props.routes);
     return getNextPagePath(
       props.routes[props.routes.length - 1].pageList,
       props.formData,
@@ -187,8 +188,8 @@ class RoutedSavableApp extends React.Component {
     // Stop a user that's been redirected from being redirected again after
     // logging in
     this.shouldRedirectOrLoad = false;
-    console.log(" redirectOrLoad ***** ");
-console.log(" redirectOrLoad ***** ",props.routes);
+    console.log(' redirectOrLoad ***** ');
+    console.log(' redirectOrLoad ***** ', props.routes);
     const firstPagePath =
       props.routes[props.routes.length - 1].pageList[0].path;
     const firstNonIntroPagePath = this.getFirstNonIntroPagePath(props);
@@ -234,28 +235,33 @@ console.log(" redirectOrLoad ***** ",props.routes);
   };
 
   render() {
-    const { currentLocation, formConfig, children} = this.props;
-    console.log("RoutedSavableApp ******* formConfig      ",formConfig);
-    console.log("RoutedSavableApp ******* children         ",children);
-    console.log("RoutedSavableApp ******* currentLocation    ",currentLocation);
+    const { currentLocation, formConfig, children } = this.props;
+    console.log('RoutedSavableApp ******* formConfig      ', formConfig);
+    console.log('RoutedSavableApp ******* children         ', children);
+    console.log(
+      'RoutedSavableApp ******* currentLocation    ',
+      currentLocation,
+    );
 
     const appType = formConfig?.customText?.appType || APP_TYPE_DEFAULT;
-   // const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
+    // const trimmedPathname = currentLocation.pathname.replace(/\/$/, '');
     let content;
-   
 
-        console.log(" going to render formApp ********  ",formConfig+"    ******   loction  *******"+currentLocation);
+    console.log(
+      ' going to render formApp ********  ',
+      formConfig + '    ******   loction  *******' + currentLocation,
+    );
 
-        console.log("FormApp comp **** ",FormApp);
-        content = (
-          <FormApp formConfig={formConfig} currentLocation={currentLocation}>
-            {children}
-          </FormApp>
-        );
-      
-        // const loadingForm =
-        // trimmedPathname.endsWith('resume') ||
-        // loadedStatus === LOAD_STATUSES.pending;
+    console.log('FormApp comp **** ', FormApp);
+    content = (
+      <FormApp formConfig={formConfig} currentLocation={currentLocation}>
+        {children}
+      </FormApp>
+    );
+
+    // const loadingForm =
+    // trimmedPathname.endsWith('resume') ||
+    // loadedStatus === LOAD_STATUSES.pending;
     // if (
     //   (!formConfig.disableSave &&
     //     loadingForm &&
